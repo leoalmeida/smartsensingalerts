@@ -1,0 +1,18 @@
+<div id="painel" class="panel panel-success round main" >
+    <div class="panel-heading">
+        <strong><strong>Assinantes</strong></strong>
+    </div>
+    <div class="panel-body caixas">
+        <ul class="list-group" >
+            <li *ngFor="let item of (subscribers | asActiveSubscriberFilter:showActive) | async; let idx=index" class="element-item" >
+                <a accesskey="w" class="btn btn-primary botao-shadow" (click)="onSelect(item)" data-toggle="tooltip" data-placement="up" title="{{item.name}}" >
+                    <img class="img-responsive center-block" src="{{item.avatar}}" alt="Img" />
+                </a>
+                {{ item.name }}
+            </li>
+        </ul>
+    </div>
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
+
+<router-outlet name="homeOutlet"></router-outlet>

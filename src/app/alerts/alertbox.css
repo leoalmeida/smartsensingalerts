@@ -1,0 +1,232 @@
+as-alertbox {
+    background: #f2f2f2;
+    height: 100%;
+    margin: 0;
+    padding: 6em 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
+
+.row-no-gutter {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row-no-gutter [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+#card {
+    background: #fff;
+    position: relative;
+
+    -webkit-box-shadow: 0 .25em .7em 0 rgba(207,207,207,1);
+    -moz-box-shadow: 0 .25em .7em 0 rgba(207,207,207,1);
+    box-shadow: 0 .25em .7em 0 rgba(207,207,207,1);
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.alert-selected {
+    position: relative;
+    overflow: hidden;
+    min-height: 12em;
+    background: #3D6AA2;
+}
+
+article {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 1em;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.info .alert,
+.alert-type {
+    font-size: 1.4em;
+    font-weight: 200;
+    position: relative;
+
+
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.info .alert:after {
+    content: '';
+    width: .9em;
+    height: .1em;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .7em;
+}
+
+.alert span {
+    color: #fff;
+    font-size: .8em;
+    font-weight: bold;
+
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.alert-type {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.icon {
+    width: 84px;
+    height: 84px;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    overflow: visible;
+}
+
+.severity {
+    font-size: 73px;
+    display: block;
+    position: relative;
+    font-weight: bold;
+}
+
+svg {
+    color: #fff;
+    fill: currentColor;
+}
+
+.secondary-info{
+    max-width: 20em;
+    word-break: break-all; /* doesn't work in firefox */
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.secondary-info img {
+    width: 1.1em;
+    height: 1.1em;
+    margin-top: 1.4em;
+    margin-right: .7em;
+    vertical-align: bottom;
+}
+
+.secondary-info span {
+    font-size: .8em;
+    text-transform: uppercase;
+    min-width: 0;
+}
+
+.alert-selected:hover figure {
+    opacity: 0.4;
+}
+
+
+figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.days .row [class*="col-"]:nth-child(2) .day  {
+    border-width: 0 .25em 0 .25em;
+    border-style: solid;
+    border-color: #eaeaea;
+}
+
+.days .row [class*="col-"] {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.days .row [class*="col-"]:hover{
+    background: #eaeaea;
+}
+
+.day {
+    padding: .7em 0;
+    text-align: center;
+
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
+    overflow: visible;
+}
+
+.day h1 {
+    font-size: .8em;
+    text-transform: uppercase;
+    margin: .7em 0;
+    padding: 0;
+}
+
+.day h2 {
+    font-size: .8em;
+    text-transform: uppercase;
+    margin: .6em 0;
+    padding: 0;
+}
+
+.day img {
+    color: #000;
+    width: 1.5em;
+    height: 1.5em;
+}

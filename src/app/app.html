@@ -1,0 +1,13 @@
+<div class="container-fluid" >
+    <div class="row ">
+        <as-navbar-left [isHidden]="navHidden" [brand]="appBrand"></as-navbar-left>
+        <div class="col-sm-12 v-align">
+            <div class="row">
+                <as-navbar-top [isHidden]="navHidden" [brand]="appBrand"></as-navbar-top>
+            </div>
+            <div class="user-dashboard">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

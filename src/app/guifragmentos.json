@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "guifragmentos",
+  "private_key_id": "bde7e8b1fb00aec518b8788bf1d47fc26c9bcfdb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCm/ptFn6O9+O/g\ncX3naVTs+ilocNSh/c0r9xQ3s0ORdZTOA0KAZZ8Vi6PZVbd3EoliJnbcpDTP7x9U\nfsyWS/EHzalHAEOMq7klhUIiTvpQn8qPXCJb/fW7YLn4lR4wahGtugD6IoffdlzK\nDydskqGtdluI4XINSSWUk7OtTZRHT3UADBnf4T89Q5tizz47WjXvJqTUjRexhItT\nCNZ0bIn7MyT8wGyMq2pwba23OcTBhMFEhz/t5yysinYy53pRVpQFtsFUaAABUzNf\nsPNi6Pcn57sP44bLTumQ/rq5aaEuCv6C5smTaYRlXbJKcBeKqphTAFJfCIJSvQkt\nUKZn3IFRAgMBAAECggEARteX0y9n7T1ftZ0vxi3fAzEUw+OpsJbUpSQKBZ8cuOZi\nnAqx+XoixKcaeSZt0Cui8GpU3kEizlsotVWdQN0ygRb0CtTH0zM+NfaUGa3bbrx6\n19pEETZpOnZMLnJD/lHg8gwIQhTIAzpZHrbTCLIjuEyPhD/vfEddk+wcuxZAIweY\nTNJSQwrLW9aFpkmMg5RCYPBhybGGJqIu0PbKaEoWnQOT+8vYItjnj35YZv8MMKsO\nk/L9nI/a/H5YGaeCKlpPVRuJDRnHgy711x9AKzay3wtYpUHmQ4HBjlua53nBeslA\nhs+dL+LqJMDMGdgRkp3BR7X54mTl4QA5SpA20eWCqQKBgQDdN9iBL/Oi0hrya24q\nPbxZhnmAW62+MJAbjzjOycu63nV/EWiepkr/EP0bbYux4SemIWoSedObJSQikphs\n8hgznjQTOQHyhRjIGoaqqirQn9XcYho3FrNj/CnEgi7rh6xXdcb1/dUV87u2Dj2R\ndZ2IHzs2hIGuzGkkbvuFicc2nwKBgQDBQDseWyGmmMa12Zum3ahp5+xptyShv34G\n8v9078/yDjovmkcQmJi2lHER0wNBRM+o/GOkF9FGdlpLq6gYT/jzjZYuXkJgFx7N\n2ZZt01PQ6w2xOQY3n3dAQ0HJ0shf5ngJOd+vDToss7gKK4w7saXhNax0HilFUVgW\n9N3fV7LyDwKBgDnzNzQga6Jrh8OZgPJv2bdaEtodKhZ4gke17Ru+oTACtqTi2pU0\n2tCWkrdsqvueD9TlS/QrFdO+lwi3flaL1OswtlOSy3/MfgFtcXmjujOMq2lgCZ4E\nxFmc5RQlRkVM9Ui0AbrPE9L8VmAKuvYv6WSPSeOuMoqn4aM5r4n73cPhAoGAT1pv\nrCxhqgYr+npLtv5n7G0Gn/ZLPXvjZTkc+siKi+uZqvhf3Am9E6PqthX+zStTViGl\nTLlW/ucUduQa1zjnkiL+mzWrbcewp3iEk75mOXB7o901l1uM3T+A4T4Dd5WsjqVM\nG5aD391AYjS1lcGByvN+SAQmkEcxs+OCw/ZADbMCgYEAoISe+EoBVlEabVcMWDzB\nJjFfagaXp/oYLP4pjcTWo0EUjLOGRxcJu56yOGGv2AZKA8skspzZXqd3i0P9Nbdc\npmyWgFw79DqYzvRxrCR/TJLMGhhivafpkbFNLylERV+jbTh3RbVxtHNuhUMhggN7\nJ48yGEiWOA5BXVmWiBGmNug=\n-----END PRIVATE KEY-----\n",
+  "client_email": "webapp@guifragmentos.iam.gserviceaccount.com",
+  "client_id": "100275444279695032871",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/webapp%40guifragmentos.iam.gserviceaccount.com"
+}

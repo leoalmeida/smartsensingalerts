@@ -1,0 +1,56 @@
+<div id="card">
+    <div class="alert-selected">
+        <article>
+
+            <div class="info">
+                <div class="alert"><span>alerta:</span> {{alertinfo.label}} ({{alertinfo.id}}) </div>
+                <div class="alert-type">{{alertinfo.name}} </div>
+                <div class="severity">{{alertinfo.severity}}</div>
+            </div>
+
+            <div class="icon">
+                <img src="../../assets/images/{{alertinfo.alertImage}}">
+            </div>
+
+        </article>
+        <article>
+            <div class="info">
+                <div class="secondary-info">
+                    <img src="../../assets/images/localization.svg">
+                    <span id="address">{{alertinfo.strAddress}}</span>
+                </div>
+            </div>
+        </article>
+
+        <!--<figure *ngIf="local1" style="background-image: url(../../assets/images/background_downtown.jpg)"></figure>-->
+        <figure class="card-image"></figure>
+    </div>-
+
+    <div class="days">
+        <div class="row row-no-gutter">
+            <div class="col-md-4">
+                <div class="day">
+                    <h1>Ocorrência</h1>
+                    <img src="../../assets/images/date-time.svg">
+                    <h2>{{alertinfo.startDate}}</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="day">
+                    <h1>Severidade</h1>
+                    <img src="../../assets/images/level{{alertinfo.severity}}.svg" >
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="day">
+                    <h1>Decorrido</h1>
+                    <img src="../../assets/images/elapsed-time.svg">
+                    <h2>{{alertinfo.removeDate}}</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

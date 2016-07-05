@@ -1,0 +1,11 @@
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCCO7zMiZZTav3eDQlD6JnVoEcEVXkodns",
+    authDomain: "guifragmentos.firebaseapp.com",
+    databaseURL: "https://guifragmentos.firebaseio.com",
+    storageBucket: "guifragmentos.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>

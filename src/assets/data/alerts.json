@@ -1,0 +1,14 @@
+{
+  "data": [
+    {"id": 1, "name": "Enchente", "alertImage": "/assets/images/enchente.png", "routeLink": "/enchentes", "isExternal": false},
+    {"id": 2, "name": "Ventos elevados", "alertImage": "/assets/images/ventosfortes.png", "routeLink": "/ventanias", "isExternal": false},
+    {"id": 3, "name": "Falha elétrica", "alertImage": "/assets/images/eletricidade.png", "routeLink": "/eltricidade", "isExternal": false},
+    {"id": 4, "name": "Incendio", "alertImage": "/assets/images/queimada.png", "routeLink": "/incendio", "isExternal": false},
+    {"id": 5, "name": "Enchente", "alertImage": "/assets/images/enchente.png", "routeLink": "/enchentes", "isExternal": true},
+    {"id": 6, "name": "Enchente", "alertImage": "/assets/images/enchente.png", "routeLink": "/enchentes", "isExternal": true},
+    {"id": 7, "name": "Incendio", "alertImage": "/assets/images/queimada.png", "routeLink": "/incendio", "isExternal": true},
+    {"id": 8, "name": "Incendio", "alertImage": "/assets/images/queimada.png", "routeLink": "/incendio", "isExternal": true},
+    {"id": 9, "name": "Incendio", "alertImage": "/assets/images/queimada.png", "routeLink": "/incendio", "isExternal": true},
+    {"id": 10, "name": "Incendio", "alertImage": "/assets/images/queimada.png", "routeLink": "/ressacas", "isExternal": true}
+  ]
+}
