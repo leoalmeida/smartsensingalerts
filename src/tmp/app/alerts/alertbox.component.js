@@ -12,9 +12,25 @@ var core_1 = require('@angular/core');
 var alerts_service_1 = require('./alerts.service');
 var core_2 = require('angular2-google-maps/core');
 var SysLogger_1 = require('../utils/SysLogger');
+var main_1 = require('../shared/constant/main');
+var forms_1 = require('@angular/forms');
+var safeimage_pipe_filter_1 = require('./safeimage-pipe.filter');
 var AlertBoxComponent = (function () {
     function AlertBoxComponent() {
     }
+    AlertBoxComponent.prototype.ngOnInit = function () {
+        this.alertImageIcon = main_1.MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.alertImage;
+        this.localizationIcon = main_1.MAIN.IMAGE_ASSETS_CONFIG.localizationIcon;
+        this.datetimeIcon = main_1.MAIN.IMAGE_ASSETS_CONFIG.datetimeIcon;
+        this.severityIcon = main_1.MAIN.IMAGE_ASSETS_CONFIG.folder +
+            main_1.MAIN.IMAGE_ASSETS_CONFIG.severityPattern +
+            this.alertinfo.severity +
+            main_1.MAIN.IMAGE_ASSETS_CONFIG.defaultIconType;
+        this.elapsedIcon = main_1.MAIN.IMAGE_ASSETS_CONFIG.elapsedIcon;
+        this.backgroundImage = 'url(' + (this.alertinfo.backImage === '' ?
+            main_1.MAIN.IMAGE_ASSETS_CONFIG.backImage :
+            main_1.MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.backImage) + ')';
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -24,8 +40,9 @@ var AlertBoxComponent = (function () {
             selector: 'as-alertbox',
             templateUrl: 'app/alerts/alertbox.html',
             styleUrls: ['app/alerts/alertbox.css'],
-            directives: [core_2.GOOGLE_MAPS_DIRECTIVES],
-            providers: [alerts_service_1.AlertsService, SysLogger_1.SysLogger]
+            directives: [core_2.GOOGLE_MAPS_DIRECTIVES, forms_1.FORM_DIRECTIVES],
+            providers: [alerts_service_1.AlertsService, SysLogger_1.SysLogger],
+            pipes: [safeimage_pipe_filter_1.SafeFilter]
         }), 
         __metadata('design:paramtypes', [])
     ], AlertBoxComponent);

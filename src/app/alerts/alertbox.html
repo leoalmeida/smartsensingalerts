@@ -1,53 +1,52 @@
 <div id="card">
     <div class="alert-selected">
         <article>
-
             <div class="info">
                 <div class="alert"><span>alerta:</span> {{alertinfo.label}} ({{alertinfo.id}}) </div>
-                <div class="alert-type">{{alertinfo.name}} </div>
-                <div class="severity">{{alertinfo.severity}}</div>
+                <div class="alert-type">{{alertinfo.name}}</div>
+                <div class="main-info">{{alertinfo.severity}}</div>
+                <!--<img [src]="severityIcon" >
+
+                <div class="extra-info">
+                    <h1>Severidade</h1>
+                    <img [src]="severityIcon">
+                    <h2 [ngSwitch]="alertinfo.severity">{{alertinfo.severity}}
+                      <span *ngSwitchCase="0"> - Informação</span>
+                      <span *ngSwitchCase="1"> - Baixa</span>
+                      <span *ngSwitchCase="2"> - Média</span>
+                      <span *ngSwitchCase="3"> - Alta</span>
+                      <span *ngSwitchDefault> - Crítica</span>
+                    </h2>
+                </div>
+
+                -->
             </div>
 
             <div class="icon">
-                <img src="../../assets/images/{{alertinfo.alertImage}}">
+                <img [src]="alertImageIcon">
             </div>
-
         </article>
         <article>
-            <div class="info">
-                <div class="secondary-info">
-                    <img src="../../assets/images/localization.svg">
-                    <span id="address">{{alertinfo.strAddress}}</span>
-                </div>
+            <div class="secondary-info">
+                <img [src]="datetimeIcon">
+                <span id="periodo">{{alertinfo.startDate}}</span>
+                <span id="periodo">{{alertinfo.releaseDate}}</span>
             </div>
         </article>
-
+        <p id="card-info">Mais Informações</p>
         <!--<figure *ngIf="local1" style="background-image: url(../../assets/images/background_downtown.jpg)"></figure>-->
-        <figure class="card-image"></figure>
-    </div>-
+        <figure [style.background-image]="backgroundImage | asSafe" class="card-image"></figure>
+    </div>
 
-    <div class="days">
+    <div class="address-box">
         <div class="row row-no-gutter">
-            <div class="col-md-4">
-                <div class="day">
-                    <h1>Ocorrência</h1>
-                    <img src="../../assets/images/date-time.svg">
-                    <h2>{{alertinfo.startDate}}</h2>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="day">
-                    <h1>Severidade</h1>
-                    <img src="../../assets/images/level{{alertinfo.severity}}.svg" >
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="day">
-                    <h1>Decorrido</h1>
-                    <img src="../../assets/images/elapsed-time.svg">
-                    <h2>{{alertinfo.removeDate}}</h2>
+            <div class="col-md-12">
+                <div class="address-info">
+                    <h1>Endereço</h1>
+                    <img [src]="localizationIcon">
+                    <div>
+                        <h2 class="address">{{alertinfo.strAddress}}</h2>
+                    </div>
                 </div>
             </div>
 

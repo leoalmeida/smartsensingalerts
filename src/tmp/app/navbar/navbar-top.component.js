@@ -13,6 +13,7 @@ var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
 var NavbarTopComponent = (function () {
     function NavbarTopComponent() {
+        this.alerts = 3;
     }
     __decorate([
         core_1.Input(), 
@@ -22,6 +23,10 @@ var NavbarTopComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], NavbarTopComponent.prototype, "isHidden", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], NavbarTopComponent.prototype, "alerts", void 0);
     NavbarTopComponent = __decorate([
         core_1.Component({
             selector: 'as-navbar-top',

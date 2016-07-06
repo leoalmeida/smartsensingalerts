@@ -51,7 +51,6 @@
         'app/shared',
 
         // 3rd party barrels
-        '@angular/router',
         'lodash',
         'angular2-google-maps/core'
     ];
@@ -64,7 +63,8 @@
         'forms',
         'http',
         'platform-browser',
-        'platform-browser-dynamic'
+        'platform-browser-dynamic',
+        'router'
     ];
 
     npmPackages.forEach(function (pkgName) {

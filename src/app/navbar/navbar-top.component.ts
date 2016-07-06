@@ -11,4 +11,5 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 export class NavbarTopComponent {
     @Input() brand: string;
     @Input() isHidden: boolean;
+    @Input() alerts: number = 3;
 }

@@ -29,11 +29,9 @@ module.exports = function(config) {
 
     files: [
       'node_modules/core-js/client/shim.min.js',
-      'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
-      'node_modules/reflect-metadata/Reflect.js',
       'node_modules/systemjs/dist/system.src.js'
     ],
 
@@ -71,9 +69,9 @@ module.exports = function(config) {
 
   dependencies.forEach(function(key) {
     configuration.files.push({
-        pattern: 'node_modules/' + key + '/**/*.js',
-        included: false,
-        watched: false
+      pattern: 'node_modules/' + key + '/**/*.js',
+      included: false,
+      watched: false
     });
   });
 

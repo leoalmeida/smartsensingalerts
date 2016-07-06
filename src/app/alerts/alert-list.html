@@ -16,64 +16,6 @@
     <ul class="list-group">
         <li *ngFor="let item of (alertItems | asCompletedAlertsFilter:showCompleted) | async; let idx=index" >
             <as-alertbox [alertinfo]="item"></as-alertbox>
-            <!--
-            <div class="panel panel-default profile-panel">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-10 col-xs-6 text-left" >
-                            <h3 class="user-name">{{item.name}}</h3>
-                        </div>
-                        <div class="col-sm-2 col-xs-6 text-center" >
-                            <div class="pull-right btn-edit">
-                                <div class="btn-group">
-                                    <button class="btn btn-primary btn-element dropdown-toggle"
-                                            id="dropdownActions" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="true">
-                                        <i class="fa fa-cog fa-fw icon-element"></i>
-                                        Action
-                                        <i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                                        <li><a href="#" data-toggle="modal" data-target="#edit-profile"><i class="fa fa-wrench"></i> Modify</a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#edit-profile"><i class="fa fa-trash"></i> Delete</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-12 text-center" >
-                            <img src="{{item.alertImage}}" title="Lorem ipsum" class="thumb" >
-                        </div>
-                        <div class="col-sm-9 col-xs-12 info-box">
-                            <ul class="meta-search">
-                                <li><i class="fa fa-tags"></i> <span>Localidade: <strong>Dept. of <span class="user-dept">Computer Science & Engineering</span></strong></span></li>
-                                <li><i class="fa fa-calendar"></i> <span>02/15/2014</span></li>
-                                <li><i class="fa fa-calendar-times-o"></i> <span>4:28 pm</span></li>
-                                <li><i class="fa fa-tags"></i> <span>People</span></li>
-                            </ul>
-                            <p><a  data-toggle="collapse" data-target="#more-info-panel" class="more-info-toggle">More ▼</a></p>
-                        </div>
-                    </div>
-                    <div id="more-info-panel" class="collapse out">
-                        <div class="row">
-                            <div class="col-sm-12 col-xs-12 info-box">
-                                <ul class="meta-search">
-                                    <li><i class="fa fa-envelope"></i> E-mail: <span class="user-email">user@example.com</span></li>
-                                    <li><i class="fa fa-phone-square"></i> Phone: <span class="user-phone">9434000000</span></li>
-                                    <li><i class="fa fa-users"></i> Admission Year: <span class="user-admission-year">2016</span></li>
-                                </ul>
-                                <ul class="meta-search">
-                                    <li><i class="fa fa-pencil"></i> Course: <span class="user-course">B. Tech.</span></li>
-                                    <li><i class="fa fa-calendar"></i> Date of Birth: <span class="user-dob">01-01-1994</span></li>
-                                    <li><i class="fa fa-bars"></i> Enrollment No: <span class="user-enrollment-no">12012002004000</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
         </li>
     </ul>
     <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
@@ -84,9 +26,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <a type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-times fa-fw" aria-hidden="true"></i>
                 </a>
-                <h4 class="modal-title">Mapa de Alertas</h4>
+                <h4 class="modal-title"> <i class="fa fa-map-marker fa-fw"></i> Mapa de Alertas</h4>
             </div>
             <div class="modal-body">
                 <as-maps [alerts]="alertItems"></as-maps>
@@ -105,17 +47,17 @@
                 <a type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
-                <h4 class="modal-title">Add Project</h4>
+                <h4 class="modal-title">Incluir Alerta</h4>
             </div>
             <div class="modal-body">
-                <input type="text" placeholder="Project Title" name="name">
-                <input type="text" placeholder="Post of Post" name="mail">
-                <input type="text" placeholder="Author" name="passsword">
-                <textarea placeholder="Desicrption"></textarea>
+                <input type="text" placeholder="Título" name="title">
+                <input type="text" placeholder="Rótulo" name="label">
+                <input type="text" placeholder="Imagem" name="image">
+                <textarea placeholder="Descrição" name="description"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="cancel" data-dismiss="modal">Close</button>
-                <button type="button" class="add-element" data-dismiss="modal">Save</button>
+                <button type="button" class="cancel" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="add-element" data-dismiss="modal">Incluir</button>
             </div>
         </div>
 

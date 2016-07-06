@@ -13,12 +13,13 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
 
 export interface AlertMarker {
     alertImage?: string;
-    key: number;
+    backImage?: string;
+    id: number;
     severity: number;
     strAddress?: string;
     isActive?: boolean;
     startDate: string;
-    removeDate: string;
+    releaseDate?: string;
     lat: number;
     lng: number;
     label: string;

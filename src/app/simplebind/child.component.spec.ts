@@ -1,14 +1,9 @@
 import {
-    it,
-    inject,
     async,
-    describe,
-    expect
-} from '@angular/core/testing';
-import {
+    inject,
     TestComponentBuilder,
     ComponentFixture
-} from '@angular/compiler/testing';
+} from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { ChildComponent } from './child.component';
 
@@ -33,28 +28,28 @@ let childCmp: ChildComponent;
 
 describe('ChildComponent', () => {
     it('should print inputs correctly', async(inject([TestComponentBuilder],
-    (tsb: TestComponentBuilder) => {
-        tsb.createAsync(TestComponent).then((fixture) => {
-            testFixture = fixture;
-            testFixture.detectChanges();
+        (tsb: TestComponentBuilder) => {
+            tsb.createAsync(TestComponent).then((fixture) => {
+                testFixture = fixture;
+                testFixture.detectChanges();
 
-            childCompiled = testFixture.nativeElement;
-            childCmp = testFixture.debugElement.children[0].componentInstance;
+                childCompiled = testFixture.nativeElement;
+                childCmp = testFixture.debugElement.children[0].componentInstance;
 
-            expect(childCompiled).toBeDefined();
-            expect(childCmp).toBeDefined();
-            expect(childCompiled.querySelector('h6'))
-                .toHaveText('From parent');
-            expect(childCompiled.querySelector('h5'))
-                .toHaveText('Hello test');
-        });
-    })));
+                expect(childCompiled).toBeDefined();
+                expect(childCmp).toBeDefined();
+                expect(childCompiled.querySelector('h6'))
+                    .toContainText('From parent');
+                expect(childCompiled.querySelector('h5'))
+                    .toContainText('Hello test');
+            });
+        })));
 
     it('should trigger changeMe event correctly', () => {
         childCmp.changeMe();
         testFixture.detectChanges();
         expect(childCmp.num).toEqual(1);
         expect(childCompiled.querySelector('h6'))
-            .toHaveText('Changed from child. Count: ' + childCmp.num);
+            .toContainText('Changed from child. Count: ' + childCmp.num);
     });
 });

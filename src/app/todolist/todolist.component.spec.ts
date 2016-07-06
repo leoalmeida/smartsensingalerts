@@ -1,16 +1,10 @@
 import {
-    it,
-    inject,
     async,
-    describe,
-    expect,
-    beforeEachProviders
-} from '@angular/core/testing';
-
-import {
+    inject,
+    addProviders,
     TestComponentBuilder,
     ComponentFixture
-} from '@angular/compiler/testing';
+} from '@angular/core/testing';
 
 import { Component } from '@angular/core';
 import { Todo } from './todo.model';
@@ -30,14 +24,16 @@ let todoCompiled;
 let todolistCmp: TodolistComponent;
 
 describe('TodolistComponent', () => {
-    beforeEachProviders(() => [
-        disableDeprecatedForms(),
-        provideForms()
-    ]);
+    beforeEach(() => {
+        addProviders([
+            disableDeprecatedForms(),
+            provideForms()
+        ]);
+    });
 
     it('should have been created successfully', async(inject([TestComponentBuilder],
         (tcb: TestComponentBuilder) => {
-            tcb.createAsync(TestComponent).then((fixture) => {
+            tcb.createAsync(TestComponent).then((fixture: ComponentFixture<TestComponent>) => {
                 testFixture = fixture;
                 fixture.detectChanges();
 
@@ -46,7 +42,7 @@ describe('TodolistComponent', () => {
                     .children[0].componentInstance;
                 expect(todoCompiled).toBeDefined();
             });
-    })));
+        })));
 
     it('should add todo successfully', () => {
         todolistCmp.todo = new Todo('test', true);
@@ -58,7 +54,7 @@ describe('TodolistComponent', () => {
 
         let item = items[items.length - 1];
         expect(item.querySelector('label').textContent).toEqual(' test');
-        expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
+        expect(item.querySelector('input[type="checkbox"]').value).toBeTruthy();
     });
 
     it('should delete todo successfully', () => {

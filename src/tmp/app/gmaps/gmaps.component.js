@@ -12,14 +12,18 @@ var core_1 = require('@angular/core');
 var core_2 = require('angular2-google-maps/core');
 var common_1 = require('@angular/common');
 var angularfire2_1 = require('angularfire2');
+var main_1 = require('../shared/constant/main');
 var MapsComponent = (function () {
     function MapsComponent() {
         // google maps zoom level
-        this.zoom = 15;
+        this.zoom = 13;
         // initial center position for the map
-        this.lat = -21.9783716;
-        this.lng = -47.8832713;
+        this.lat = -22.017000;
+        this.lng = -47.912600;
     }
+    MapsComponent.prototype.alertImage = function (image) {
+        return main_1.MAIN.IMAGE_ASSETS_CONFIG.folder + image;
+    };
     /*markers: Marker[] = [
         {
             lat: -21.978352,
@@ -62,8 +66,8 @@ var MapsComponent = (function () {
         core_1.Component({
             selector: 'as-maps',
             directives: [core_2.GOOGLE_MAPS_DIRECTIVES, common_1.CORE_DIRECTIVES],
-            styles: ["\n    .sebm-google-map-container {\n       max-height: 85%;\n     }\n  "],
-            template: "\n    <sebm-google-map \n      [latitude]=\"lat\"\n      [longitude]=\"lng\"\n      [zoom]=\"zoom\"\n      [disableDefaultUI]=\"false\"\n      [zoomControl]=\"false\"\n      (mapClick)=\"mapClicked($event)\">\n    \n      \n      <sebm-google-map-marker *ngFor=\"let m of (alerts) | async; let i = index\"\n          (markerClick)=\"clickedMarker(m.label, i)\"\n          [latitude]=\"m.lat\"\n          [longitude]=\"m.lng\"\n          [label]=\"m.label\"\n          [markerDraggable]=\"m.draggable\"\n          (dragEnd)=\"markerDragEnd(m, $event)\">\n          \n        <sebm-google-map-info-window>\n          <strong>{{m.name}}</strong>\n          <img class=\"img-responsive center-block\" src=\"{{m.alertImage}}\" alt=\"Img\" />\n        </sebm-google-map-info-window>\n        \n      </sebm-google-map-marker>\n      <sebm-google-map-circle [latitude]=\"lat + 0.3\" [longitude]=\"lng\" \n          [radius]=\"5000\"\n          [fillColor]=\"'red'\"\n          [circleDraggable]=\"true\"\n          [editable]=\"true\">\n      </sebm-google-map-circle>\n\n    </sebm-google-map>\n" }), 
+            styles: ["\n    .sebm-google-map-container {\n       height: 85%;\n     }\n  "],
+            template: "\n    <sebm-google-map \n      [latitude]=\"lat\"\n      [longitude]=\"lng\"\n      [zoom]=\"zoom\"\n      [disableDefaultUI]=\"true\"\n      [zoomControl]=\"true\"\n      (mapClick)=\"mapClicked($event)\" id=\"map\">\n    \n      \n      <sebm-google-map-marker *ngFor=\"let m of (alerts) | async; let i = index\"\n          (markerClick)=\"clickedMarker(m.label, i)\"\n          [latitude]=\"m.lat\"\n          [longitude]=\"m.lng\"\n          [label]=\"m.label\"\n          [markerDraggable]=\"m.draggable\"\n          (dragEnd)=\"markerDragEnd(m, $event)\">\n          \n        <sebm-google-map-info-window>\n          <strong>{{m.name}}  ({{m.id}})</strong>\n          <h1>Severidade: {{m.severity}}</h1>\n          <h2>Ocorr\u00EAncia: {{m.startDate}}</h2>\n          <h2>Endere\u00E7o: {{m.strAddress}}</h2>\n          <img class=\"img-responsive center-block\" [src]=\"alertImage(m.alertImage)\" alt=\"Img\" />\n        </sebm-google-map-info-window>\n        \n      </sebm-google-map-marker>\n      <sebm-google-map-circle [latitude]=\"lat\" [longitude]=\"lng\" \n          [radius]=\"600\"\n          [fillColor]=\"'red'\"\n          [circleDraggable]=\"false\"\n          [editable]=\"false\">\n      </sebm-google-map-circle>\n\n    </sebm-google-map>\n" }), 
         __metadata('design:paramtypes', [])
     ], MapsComponent);
     return MapsComponent;

@@ -7,6 +7,7 @@ import {
 import {CORE_DIRECTIVES} from '@angular/common';
 import {FirebaseListObservable} from 'angularfire2';
 import {AlertMarker} from '../management/interfaces';
+import {MAIN} from '../shared/constant/main';
 
 
 @Component({
@@ -14,7 +15,7 @@ import {AlertMarker} from '../management/interfaces';
     directives: [GOOGLE_MAPS_DIRECTIVES, CORE_DIRECTIVES],
     styles: [`
     .sebm-google-map-container {
-       max-height: 85%;
+       height: 85%;
      }
   `],
     template: `
@@ -22,9 +23,9 @@ import {AlertMarker} from '../management/interfaces';
       [latitude]="lat"
       [longitude]="lng"
       [zoom]="zoom"
-      [disableDefaultUI]="false"
-      [zoomControl]="false"
-      (mapClick)="mapClicked($event)">
+      [disableDefaultUI]="true"
+      [zoomControl]="true"
+      (mapClick)="mapClicked($event)" id="map">
     
       
       <sebm-google-map-marker *ngFor="let m of (alerts) | async; let i = index"
@@ -36,16 +37,19 @@ import {AlertMarker} from '../management/interfaces';
           (dragEnd)="markerDragEnd(m, $event)">
           
         <sebm-google-map-info-window>
-          <strong>{{m.name}}</strong>
-          <img class="img-responsive center-block" src="{{m.alertImage}}" alt="Img" />
+          <strong>{{m.name}}  ({{m.id}})</strong>
+          <h1>Severidade: {{m.severity}}</h1>
+          <h2>Ocorrência: {{m.startDate}}</h2>
+          <h2>Endereço: {{m.strAddress}}</h2>
+          <img class="img-responsive center-block" [src]="alertImage(m.alertImage)" alt="Img" />
         </sebm-google-map-info-window>
         
       </sebm-google-map-marker>
-      <sebm-google-map-circle [latitude]="lat + 0.3" [longitude]="lng" 
-          [radius]="5000"
+      <sebm-google-map-circle [latitude]="lat" [longitude]="lng" 
+          [radius]="600"
           [fillColor]="'red'"
-          [circleDraggable]="true"
-          [editable]="true">
+          [circleDraggable]="false"
+          [editable]="false">
       </sebm-google-map-circle>
 
     </sebm-google-map>
@@ -53,11 +57,15 @@ import {AlertMarker} from '../management/interfaces';
 export class MapsComponent {
     @Input() alerts: FirebaseListObservable<AlertMarker[]>;
     // google maps zoom level
-    zoom: number = 15;
+    zoom: number = 13;
 
     // initial center position for the map
-    lat: number = -21.9783716;
-    lng: number = -47.8832713;
+    lat: number = -22.017000;
+    lng: number = -47.912600;
+
+    alertImage(image: string) {
+        return MAIN.IMAGE_ASSETS_CONFIG.folder + image;
+    }
 
     /*markers: Marker[] = [
         {

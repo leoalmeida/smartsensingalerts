@@ -15,13 +15,13 @@ if (ENV === 'production') {
 }
 platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
     SysLogger_1.SysLogger,
+    forms_1.disableDeprecatedForms(),
+    forms_1.provideForms(),
     app_routes_1.APP_ROUTER_PROVIDERS,
     angularfire2_1.FIREBASE_PROVIDERS,
     core_2.GOOGLE_MAPS_PROVIDERS,
     angularfire2_1.defaultFirebase(main_1.MAIN.FIREBASE_APP_CONFIG),
     angularfire2_1.firebaseAuthConfig(main_1.MAIN.FIREBASE_APP_AUTH),
-    forms_1.disableDeprecatedForms(),
-    forms_1.provideForms(),
     lazy_maps_api_loader_1.provideLazyMapsAPILoaderConfig(main_1.MAIN.MAPS_APP_CONFIG)
 ]);
 

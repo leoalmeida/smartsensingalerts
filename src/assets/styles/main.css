@@ -5916,7 +5916,7 @@ li, ul {
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
   background: transparent none repeat scroll 0 0;
-  border-color: -moz-use-text-color -moz-use-text-color #d4d9e3;
+  border-color: #d4d9e3;
   border-image: none;
   border-style: none none solid;
   border-width: medium medium 1px;
@@ -6017,7 +6017,7 @@ li, ul {
   border-radius: 6em;
   font-size: 1.25em;
   font-weight: 600;
-  padding: .5em 2em .5em 3em;
+  padding: .5em 1em .5em 2em;
   position: relative; }
 
 .header-rightside .nav > li > a:focus,
@@ -6030,16 +6030,17 @@ li, ul {
 
 .icon-element {
   color: inherit !important;
-  font-size: 1.7em !important;
-  left: 0;
-  top: 0.2em;
+  font-size: 1.4em !important;
+  left: .1em;
+  top: .4em;
   position: absolute; }
 
 .header-top i {
   color: #0e1a35; }
 
 .icon-info {
-  position: relative; }
+  position: relative;
+  padding: 0; }
 
 .label.label-primary {
   border-radius: 50%;
@@ -6051,7 +6052,7 @@ li, ul {
 .icon-info .label {
   border: .1em solid #ffffff;
   font-weight: 500;
-  padding: .15em .25em;
+  padding: .25em .3em;
   text-align: center; }
 
 .header-top li {
@@ -6183,9 +6184,6 @@ header {
   opacity: 1;
   text-shadow: none; }
 
-.modal-maps-body {
-  max-height: 80vh; }
-
 .modal-body input {
   border: .1em solid #d4d9e3;
   font-size: .7em;
@@ -6309,7 +6307,7 @@ header {
       padding-right: 0; }
     .modal-header.login-header .logo img {
       max-width: 7.25em !important; } }
-  @media only screen and (min-device-width: 767px) and (max-device-width: 998px) {
+  @media (min-width: 47em) {
     .modal-header.login-header .user-dashboard .header-top {
       padding-top: .25em; }
     .modal-header.login-header .user-dashboard .header-rightside {
@@ -6326,7 +6324,7 @@ header {
       font-size: .9em; }
     .modal-header.login-header .icon-image img {
       max-width: 2.2em !important; } }
-  @media only screen and (min-device-width: 998px) and (max-device-width: 1350px) {
+  @media (min-width: 68em) {
     .modal-header.login-header .userPanel .logo img {
       max-width: 12em;
       padding: 1em 0 1em;
@@ -6334,9 +6332,8 @@ header {
 
 /* Search Input */
 #custom-search-input {
-  margin-left: 40px;
-  padding: 3px;
-  border-radius: 6px;
+  padding: .2em;
+  border-radius: .4em;
   background-color: #fff; }
 
 #custom-search-input input {
@@ -6345,32 +6342,59 @@ header {
   font-style: italic;
   max-width: 100%;
   font-size: 16pt;
-  padding: 16px .65em;
+  padding: 1em .65em;
   color: #8492af; }
 
 #custom-search-input input:focus {
-  border-bottom: 1px solid #BDC4D4;
-  line-height: 22px;
+  border-bottom: .05em solid #BDC4D4;
+  line-height: 1em;
   transition: 0.1s all; }
 
 #custom-search-input button {
-  margin: 2px 0 0 0;
+  margin: .1em 0 0 0;
   background: none;
-  box-shadow: none;
-  border: 0;
+  border: none;
   color: #666666;
-  padding: 0 8px 0 .7em;
-  border-right: solid 1px #ccc; }
+  padding: 0 1em 0 .7em;
+  border-right: solid 1px #ccc;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  overflow: visible;
+  cursor: pointer;
+  outline: 0; }
+
+#custom-search-input button:after {
+  content: "";
+  background: #8492af;
+  display: block;
+  position: absolute;
+  padding-top: 200%;
+  padding-left: 180%;
+  margin-left: 0 !important;
+  margin-top: -100%;
+  opacity: 0;
+  transition: all 0.8s;
+  border-radius: 50%;
+  overflow: visible; }
+
+#custom-search-input button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+  overflow: visible; }
 
 #custom-search-input button:hover {
-  border: 0;
-  box-shadow: none;
-  border-right: solid 1px #ccc; }
+  -webkit-text-shadow: #8492af 0 .2em 1em;
+  -moz-text-shadow: #8492af 0 .2em 1em;
+  -o-text-shadow: #8492af 0 .2em 1em;
+  text-shadow: #8492af 0 .2em 1em; }
 
 #custom-search-input .fa-search {
-  font-size: 23px; }
+  font-size: 1.5em; }
 
-/* left menu bar - Toggle */
+/* left menu bar - Toggle + Panel */
 .panelToggle {
   background: transparent;
   display: inline-block;
@@ -6400,8 +6424,8 @@ header {
   border-top: .7em solid #0F4B99;
   display: inline-block;
   height: 2.5em;
-  margin: -.7em -.7em;
-  border-top-left-radius: 2em; }
+  margin: -.68em -.6em;
+  border-top-left-radius: 2.5em; }
 
 .panelToggle span i {
   line-height: 1.5em;
@@ -6433,7 +6457,6 @@ header {
   transition: 0.5s; }
 
 .logout:hover {
-  border: .1em solid #ff8698;
   border-radius: 50%;
   transform: scale(1.15);
   color: #ff8698;
@@ -6450,7 +6473,8 @@ header {
   margin: 0 auto;
   color: #fff;
   font-size: 1em;
-  padding: .7em 0; }
+  padding: .7em 0;
+  text-align: center; }
 
 .userMenu ul {
   width: 70%;
@@ -6464,11 +6488,7 @@ header {
   color: #fff;
   padding: .6em 0; }
 
-.showI2 {
-  margin: 0;
-  text-align: center; }
-
-.Icon2 {
+.menu-icon {
   padding: 0;
   font-size: 1.4em !important; }
 
@@ -6487,14 +6507,7 @@ header {
   color: #EDE540;
   cursor: pointer; }
 
-.width50px {
-  width: 50%;
-  padding: 1.4em 0; }
-
-.width90px {
-  width: 100%;
-  padding: 5px 0; }
-
+/* end - left menu bar - Panel */
 @-webkit-keyframes backgroundScroll {
   from {
     background-position: 0 0; }
@@ -6508,7 +6521,6 @@ header {
     background-position: -24em 0; } }
 
 .card-image {
-  background-image: url("../../assets/images/1200px-São_Carlos_-_Downtown_by_Night.jpg");
   float: left;
   padding: 6em 0;
   width: 100%;
@@ -6518,6 +6530,40 @@ header {
   background-size: 130% 100%;
   background-position: top;
   background-attachment: fixed; }
+
+as-alertbox {
+  background: #f2f2f2;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  -ms-flex-line-pack: start;
+  -ms-flex-align: start;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+as-alertbox > * {
+  -webkit-flex: 1 100%;
+  -ms-flex: 1 100%;
+  flex: 1 1 100%; }
 
 .panel-title {
   font-weight: bold;

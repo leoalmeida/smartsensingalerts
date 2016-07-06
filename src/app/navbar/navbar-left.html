@@ -4,19 +4,18 @@
             <img src="../../assets/images/html_logo_128.png" alt="logo" >
         </div>
         <div class="userMenu">
-            <ul [class.showI2]="togglePanel">
-                <li><a class="zoom" data-toggle="tooltip" data-placement="right" title="Sair"><i class="fa fa-power-off logout Icon2"></i></a></li>
+            <ul>
+                <li><a class="zoom" data-toggle="tooltip" data-placement="right" title="Sair">
+                    <i class="fa fa-power-off logout menu-icon"></i></a></li>
                 <li><div class="bar"></div></li>
                 <li><a [routerLink]="['/home']" class="zoom" data-toggle="tooltip" data-placement="right" title="Home">
-                    <i class="fa fa-home Icon2" rel="tooltip" title="Home" id="" aria-hidden="true"></i></a></li>
-                <li><a [routerLink]="['/simplebind']" class="zoom" data-toggle="tooltip" data-placement="right" title="Simplebind">
-                    <i class="fa fa-tasks Icon2" aria-hidden="true"></i></a></li>
+                    <i class="fa fa-home menu-icon" rel="tooltip" title="Home" aria-hidden="true"></i></a></li>
                 <li><a [routerLink]="['/alertas']" class="zoom" data-toggle="tooltip" data-placement="right" title="Alertas">
-                    <i class="fa fa-bell-o Icon2" aria-hidden="true"></i></a></li>
+                    <i class="fa fa-bell-o menu-icon" aria-hidden="true" title="Alertas"  aria-hidden="true"></i></a></li>
                 <li><a [routerLink]="['/subscribers']" class="zoom" data-toggle="tooltip" data-placement="right" title="Subscribers">
-                    <i class="fa fa-users Icon2" aria-hidden="true"></i></a></li>
+                    <i class="fa fa-users menu-icon" aria-hidden="true" title="Assinantes"  aria-hidden="true"></i></a></li>
                 <li><a [routerLink]="['/admin']" class="zoom" data-toggle="tooltip" data-placement="right" title="Admin">
-                    <i class="fa fa-lock Icon2" aria-hidden="true"></i></a></li>
+                    <i class="fa fa-lock menu-icon" aria-hidden="true" title="Admin"  aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>

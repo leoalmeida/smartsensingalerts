@@ -19,12 +19,12 @@ if (ENV === 'production') {
 
 bootstrap(AppComponent, [
     SysLogger,
+    disableDeprecatedForms(),
+    provideForms(),
     APP_ROUTER_PROVIDERS,
     FIREBASE_PROVIDERS,
     GOOGLE_MAPS_PROVIDERS,
     defaultFirebase(MAIN.FIREBASE_APP_CONFIG),
     firebaseAuthConfig(MAIN.FIREBASE_APP_AUTH),
-    disableDeprecatedForms(),
-    provideForms(),
     provideLazyMapsAPILoaderConfig(MAIN.MAPS_APP_CONFIG)
 ]);

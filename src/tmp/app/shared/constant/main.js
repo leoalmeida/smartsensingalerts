@@ -2,7 +2,7 @@
 var angularfire2_1 = require('angularfire2/angularfire2');
 exports.MAIN = {
     APP: {
-        BRAND: 'Angular 2 Starter',
+        BRAND: 'Smart Sensing Alerts',
         LEFTNAV: true
     },
     FIREBASE_APP_CONFIG: {
@@ -19,7 +19,17 @@ exports.MAIN = {
     },
     MAPS_APP_CONFIG: {
         apiKey: 'AIzaSyCCO7zMiZZTav3eDQlD6JnVoEcEVXkodns',
+        region: 'BR',
         language: 'pt-BR'
+    },
+    IMAGE_ASSETS_CONFIG: {
+        folder: '../../assets/images/',
+        defaultIconType: '.svg',
+        localizationIcon: '../../assets/images/localization.svg',
+        elapsedIcon: '../../assets/images/elapsed-time.svg',
+        datetimeIcon: '../../assets/images/date-time.svg',
+        severityPattern: 'level',
+        backImage: '../../assets/images/1200px-São_Carlos_-_Downtown_by_Night.jpg'
     }
 };
 
