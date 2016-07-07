@@ -15,7 +15,7 @@ import {MAIN} from '../shared/constant/main';
     directives: [GOOGLE_MAPS_DIRECTIVES, CORE_DIRECTIVES],
     styles: [`
     .sebm-google-map-container {
-       height: 85%;
+       height: 20em;
      }
   `],
     template: `

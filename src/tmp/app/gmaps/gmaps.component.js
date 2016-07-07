@@ -66,7 +66,7 @@ var MapsComponent = (function () {
         core_1.Component({
             selector: 'as-maps',
             directives: [core_2.GOOGLE_MAPS_DIRECTIVES, common_1.CORE_DIRECTIVES],
-            styles: ["\n    .sebm-google-map-container {\n       height: 85%;\n     }\n  "],
+            styles: ["\n    .sebm-google-map-container {\n       height: 20em;\n     }\n  "],
             template: "\n    <sebm-google-map \n      [latitude]=\"lat\"\n      [longitude]=\"lng\"\n      [zoom]=\"zoom\"\n      [disableDefaultUI]=\"true\"\n      [zoomControl]=\"true\"\n      (mapClick)=\"mapClicked($event)\" id=\"map\">\n    \n      \n      <sebm-google-map-marker *ngFor=\"let m of (alerts) | async; let i = index\"\n          (markerClick)=\"clickedMarker(m.label, i)\"\n          [latitude]=\"m.lat\"\n          [longitude]=\"m.lng\"\n          [label]=\"m.label\"\n          [markerDraggable]=\"m.draggable\"\n          (dragEnd)=\"markerDragEnd(m, $event)\">\n          \n        <sebm-google-map-info-window>\n          <strong>{{m.name}}  ({{m.id}})</strong>\n          <h1>Severidade: {{m.severity}}</h1>\n          <h2>Ocorr\u00EAncia: {{m.startDate}}</h2>\n          <h2>Endere\u00E7o: {{m.strAddress}}</h2>\n          <img class=\"img-responsive center-block\" [src]=\"alertImage(m.alertImage)\" alt=\"Img\" />\n        </sebm-google-map-info-window>\n        \n      </sebm-google-map-marker>\n      <sebm-google-map-circle [latitude]=\"lat\" [longitude]=\"lng\" \n          [radius]=\"600\"\n          [fillColor]=\"'red'\"\n          [circleDraggable]=\"false\"\n          [editable]=\"false\">\n      </sebm-google-map-circle>\n\n    </sebm-google-map>\n" }), 
         __metadata('design:paramtypes', [])
     ], MapsComponent);
