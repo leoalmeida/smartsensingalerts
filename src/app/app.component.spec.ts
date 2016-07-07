@@ -43,17 +43,17 @@ describe('AppComponent', () => {
             {
                 provide: Router,
                 useFactory: (
-                    resolver:ComponentResolver,
-                    urlSerializer:UrlSerializer,
-                    outletMap:RouterOutletMap,
-                    location:Location,
-                    injector:Injector) => {
+                    resolver: ComponentResolver,
+                    urlSerializer: UrlSerializer,
+                    outletMap: RouterOutletMap,
+                    location: Location,
+                    injector: Injector) => {
                         const r = new Router(TestComponent, resolver, urlSerializer, outletMap, location, injector, config);
                         return r;
                     },
                 deps: [ComponentResolver, UrlSerializer, RouterOutletMap, Location, Injector]
             },
-            {provide: ActivatedRoute, useFactory: (r:Router) => r.routerState.root, deps: [Router]},
+            {provide: ActivatedRoute, useFactory: (r: Router) => r.routerState.root, deps: [Router]},
         ]);
     });
 

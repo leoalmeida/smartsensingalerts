@@ -13,22 +13,21 @@ import {
 } from '@angular/compiler/testing';
 
 import { Component } from '@angular/core';
-import { Subscriber, Subscriber } from './subscriber.model';
-import { SubscribersComponent } from './subscriber.component';
+import { Subscriber } from './subscriber.model';
+import { SubscriberComponent } from './subscriber.component';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { Subscription } from "./subscription.model";
 
 @Component({
     selector: 'as-test',
     template: '<as-subscriber-info></as-Subscriber-info>',
-    directives: [SubscribersComponent]
+    directives: [SubscriberComponent]
 })
 class TestComponent {
 }
 
 let testFixture: ComponentFixture<any>;
-let subscriberCompiled, subscriptionCompiled;
-let subscriberCmp: SubscribersComponent;
+let subscriberCompiled: any, subscriptionCompiled: any;
+let subscriberCmp: SubscriberComponent;
 
 
 describe('SubscriberComponent', () => {
@@ -56,17 +55,22 @@ describe('SubscriberComponent', () => {
 
     it('should add subscriber successfully', () => {
 
-        subscriberCmp.subscription = new Subscription(1,"", true);
+        subscriberCmp.subscriber = new Subscriber(1, 'Leonardo', '/assets/images/profile_demo_2.png', '/leonardo',
+            '@-21.9833256, -47.8996836,15z?hl=pt-BR', true, []);
         subscriberCmp.addSubscriber();
         testFixture.detectChanges();
-        subscriberCmp.subscription = new Subscription(2,"", false);
+        subscriberCmp.subscriber = new Subscriber(2, 'Sandra', '/assets/images/profile_demo_2.png', '/leonardo',
+            '@-21.9833256, -47.8996836,15z?hl=pt-BR', false, []);
         subscriberCmp.addSubscriber();
         testFixture.detectChanges();
-        subscriberCmp.subscription = new Subscription(3,"", true);
+        subscriberCmp.subscriber = new Subscriber(3, 'Americo', '/assets/images/profile_demo_2.png', '/leonardo',
+            '@-21.9833256, -47.8996836,15z?hl=pt-BR', true, []);
         subscriberCmp.addSubscriber();
         testFixture.detectChanges();
 
-        subscriberCmp.subscriber = new Subscriber(1,'Leonardo','/assets/images/profile_demo_2.png','/leonardo','@-21.9833256,-47.8996836,15z?hl=pt-BR', true, subscriptionlist);
+        subscriberCmp.subscriber =
+            new Subscriber(4, 'Thais', '/assets/images/profile_demo_2.png', '/leonardo',
+                            '@-21.9833256, -47.8996836,15z?hl=pt-BR', true, []);
         subscriberCmp.addSubscriber();
         testFixture.detectChanges();
 
@@ -76,7 +80,7 @@ describe('SubscriberComponent', () => {
         /*
         let item = items[items.length - 1];
         expect(item.querySelector('label').textContent).toEqual('test');
-        expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
+        expect(item.querySelector('input[type='checkbox']').checked).toBeTruthy();
 
 
         let subscriptionItems = subscriptionCompiled.querySelectorAll('.subscription-element-item');
@@ -84,7 +88,7 @@ describe('SubscriberComponent', () => {
 
         let item = subscriptionItems[subscriptionItems.length - 1];
         expect(item.querySelector('label').textContent).toEqual('test');
-        expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
+        expect(item.querySelector('input[type='checkbox']').checked).toBeTruthy();
         */
     });
 
@@ -98,9 +102,9 @@ describe('SubscriberComponent', () => {
     });
 
     it('should delete Subscriber successfully', () => {
-        subscriberCmp.delSubscriber(0);
+        subscriberCmp.delSubscriber('0');
         testFixture.detectChanges();
-        expect(todoCompiled.querySelectorAll('.element-item').length)
+        expect(subscriberCompiled.querySelectorAll('.element-item').length)
             .toEqual(1);
     });
 });

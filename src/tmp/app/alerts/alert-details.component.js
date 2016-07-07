@@ -22,13 +22,13 @@ var AlertDetailsComponent = (function () {
         this.router = router;
         this.dialogService = dialogService;
         this.formAlert = {
-            key: 0,
+            id: 0,
             name: 'Enchente',
             alertImage: 'flood.svg',
             severity: 2,
             isActive: false,
             startDate: '',
-            removeDate: '',
+            releaseDate: '',
             lat: -21.975086,
             lng: -47.901249,
             label: 'N',
@@ -82,7 +82,7 @@ var AlertDetailsComponent = (function () {
         return o;
     };
     AlertDetailsComponent.prototype.gotoAlertlist = function () {
-        var alertKey = this.formAlert ? this.formAlert.key : null;
+        var alertKey = this.formAlert ? this.formAlert.id : null;
         // Pass along the alert id if available
         // so that the Alert list component can select that alert.
         // Add a totally useless `foo` parameter for kicks.

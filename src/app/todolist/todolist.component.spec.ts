@@ -20,7 +20,7 @@ class TestComponent {
 }
 
 let testFixture: ComponentFixture<any>;
-let todoCompiled;
+let todoCompiled: any;
 let todolistCmp: TodolistComponent;
 
 describe('TodolistComponent', () => {

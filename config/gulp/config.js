@@ -6,7 +6,6 @@ module.exports = function () {
         app = src + 'app/',
         test = src + 'test/',
         tmp = src + 'tmp/',
-        vendorNpmFiles = src + 'vendor/'
         tmpApp = tmp + 'app/',
         tmpTest = tmp + 'test/',
         testHelper = test + 'test-helpers/',
@@ -20,9 +19,7 @@ module.exports = function () {
         },
         index = src + 'index.html',
         tsFiles = [
-            app + '**/!(*.spec)+(.ts)',
-            vendorNpmFiles + 'angularfire2/**/*.js',
-            vendorNpmFiles + 'firebase/*.js'
+            app + '**/!(*.spec)+(.ts)'
         ],
         tsTestFiles = {
             unit: [app + '**/*.spec.ts'],
@@ -101,9 +98,7 @@ module.exports = function () {
                     assetsPath.styles + "main.css",
                     tmpApp + "**/*.js",
                     app + "**/*.css",
-                    app + "**/*.html",
-                    vendorNpmFiles + 'angularfire2/**/*.js',
-                    vendorNpmFiles + 'firebase/*.js'
+                    app + "**/*.html"
                 ]
             },
             prod: {

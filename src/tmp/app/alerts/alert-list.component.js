@@ -22,7 +22,7 @@ var AlertsListComponent = (function () {
         this.showCompleted = true;
         this.showPanel = true;
     }
-    AlertsListComponent.prototype.isSelected = function (alert) { return alert.key === this.selectedKey; };
+    AlertsListComponent.prototype.isSelected = function (alert) { return alert.id === this.selectedKey; };
     AlertsListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.route
@@ -39,7 +39,7 @@ var AlertsListComponent = (function () {
     };
     AlertsListComponent.prototype.onSelect = function (alert) {
         // Navigate with Absolute link
-        this.router.navigate(['/alerts', alert.key]);
+        this.router.navigate(['/alerts', alert.id]);
     };
     AlertsListComponent = __decorate([
         core_1.Component({

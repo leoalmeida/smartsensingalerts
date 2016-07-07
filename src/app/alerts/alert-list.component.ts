@@ -30,7 +30,7 @@ export class AlertsListComponent implements OnInit, OnDestroy {
         this.showPanel = true;
     }
 
-    isSelected(alert: AlertMarker) { return alert.key === this.selectedKey; }
+    isSelected(alert: AlertMarker) { return alert.id === this.selectedKey; }
 
     ngOnInit() {
         this.sub = this.route
@@ -49,7 +49,7 @@ export class AlertsListComponent implements OnInit, OnDestroy {
 
     onSelect(alert: AlertMarker) {
         // Navigate with Absolute link
-        this.router.navigate(['/alerts', alert.key]);
+        this.router.navigate(['/alerts', alert.id]);
     }
 
     /*addAlert() {

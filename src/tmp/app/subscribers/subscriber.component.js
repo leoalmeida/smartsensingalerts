@@ -14,8 +14,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var angularfire2_1 = require('angularfire2');
 var subscriber_active_filter_pipe_1 = require('./subscriber-active-filter.pipe');
+var subscriber_model_1 = require('./subscriber.model');
 var SubscriberComponent = (function () {
-    // private newSubKey: string;
     // private dbname = 'subscribers';
     function SubscriberComponent(af) {
         this.subscriber = {
@@ -34,6 +34,21 @@ var SubscriberComponent = (function () {
         this.subscribers = af.database.list('/subscribers');
         this.showActive = true;
     }
+    SubscriberComponent.prototype.addSubscriber = function () {
+        this.newSubKey = this.subscribers.push(subscriber_model_1.Subscriber.clone(this.subscriber)).key();
+        // let updates = {};
+        // updates['/' + this.dbname + '/' + newSubKey] = Subscriber.clone(this.subscriber);
+        // this.dbconn().ref().update(updates);
+        this.subscriber.clear();
+    };
+    SubscriberComponent.prototype.updateAlert = function (id, newObject) {
+        this.subscribers.update(id, newObject);
+    };
+    SubscriberComponent.prototype.delSubscriber = function (id) {
+        this.subscribers.remove(id);
+        // this.subscriberItems = this.subscriberItems.filter(
+        //   (subscriber, index) => index !== subscriberIndex);
+    };
     SubscriberComponent = __decorate([
         core_1.Component({
             selector: 'as-subscriber-info',

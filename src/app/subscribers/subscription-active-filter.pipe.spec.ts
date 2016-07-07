@@ -1,15 +1,13 @@
 import {ActiveFilterSubscriptionsPipe} from './subscription-active-filter.pipe';
-import { Alert } from './alert.model';
-import {Subscription} from "./subscription.model";
-import {Subscriber} from "./subscriber.model";
+import {Subscription} from './subscription.model';
 
 describe('ActiveFilterSubscriptionsPipe', () => {
     let pipe: ActiveFilterSubscriptionsPipe;
 
     let subscriptions: Subscription[] = [
-        new Subscription(1,"", true),
-        new Subscription(2,"", false),
-        new Subscription(3,"", true)
+        new Subscription(1, '', true),
+        new Subscription(2, '', false),
+        new Subscription(3, '', true)
     ];
 
     beforeEach(() => {

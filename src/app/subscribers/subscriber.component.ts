@@ -4,6 +4,7 @@
 import {Component} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {ActiveFilterSubscriberPipe} from './subscriber-active-filter.pipe';
+import {Subscriber} from './subscriber.model';
 
 @Component({
     selector: 'as-subscriber-info',
@@ -19,7 +20,7 @@ export class SubscriberComponent {
     private subscribers: FirebaseListObservable<any[]>;
     private showActive: Boolean;
 
-    // private newSubKey: string;
+    private newSubKey: string;
     // private dbname = 'subscribers';
 
     constructor(af: AngularFire) {
@@ -40,7 +41,7 @@ export class SubscriberComponent {
         this.showActive = true;
     }
 
-/*
+
     addSubscriber() {
         this.newSubKey = this.subscribers.push(Subscriber.clone(this.subscriber)).key();
         // let updates = {};
@@ -50,14 +51,14 @@ export class SubscriberComponent {
         this.subscriber.clear();
     }
 
-    updateAlert(key: string, newObject: Subscriber) {
-        this.subscribers.update(key, newObject);
+    updateAlert(id: string, newObject: Subscriber) {
+        this.subscribers.update(id, newObject);
     }
 
-    delSubscriber(key: string) {
-        this.subscribers.remove(key);
+    delSubscriber(id: string) {
+        this.subscribers.remove(id);
 
         // this.subscriberItems = this.subscriberItems.filter(
          //   (subscriber, index) => index !== subscriberIndex);
-    }*/
+    }
 }

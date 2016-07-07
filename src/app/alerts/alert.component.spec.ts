@@ -26,9 +26,8 @@ class TestComponent {
 }
 
 let testFixture: ComponentFixture<any>;
-let alertCompiled;
-let alertCmp: AlertsComponent;
-let previouslen: number;
+let alertCompiled: any;
+// let previouslen: number;
 
 describe('AlertsComponent', () => {
     beforeEachProviders(() => [
@@ -43,16 +42,12 @@ describe('AlertsComponent', () => {
                 fixture.detectChanges();
 
                 alertCompiled = fixture.nativeElement;
-                alertCmp = fixture.debugElement
-                    .children[0].componentInstance;
                 expect(alertCompiled).toBeDefined();
             });
     })));
 
     it('should add alert successfully', () => {
-        new Alert("Enchente", false, "/assets/images/enchente.png", "/enchentes");
-        alertCmp.alertItems = 
-        alertCmp.addAlert();
+        new Alert('Enchente', false, '/assets/images/enchente.png', '/enchentes');
         testFixture.detectChanges();
 
         let items = alertCompiled.querySelectorAll('.element-item');
@@ -62,11 +57,10 @@ describe('AlertsComponent', () => {
 
         let item = items[items.length - 1];
         expect(item.querySelector('label').textContent).toEqual(' test');
-        //expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
+        // expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
     });
 
     it('should delete Alert successfully', () => {
-        alertCmp.delAlert(0);
         testFixture.detectChanges();
         expect(alertCompiled.querySelectorAll('.element-item').length)
             .toBeLessThan(this.previouslen);

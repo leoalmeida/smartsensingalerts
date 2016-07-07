@@ -2,7 +2,7 @@ beforeEach(() => {
     jasmine.addMatchers({
         toContainText: () => {
             return {
-                compare: (actual, expectedText) => {
+                compare: (actual: any, expectedText: any) => {
                     let actualText = actual.textContent;
                     return {
                         pass: actualText.indexOf(expectedText) > -1,
