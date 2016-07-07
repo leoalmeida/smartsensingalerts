@@ -9,7 +9,7 @@
     "url": "https://github.com/leoalmeida/smartsensingalerts.git"
   },
   "engines": {
-    "node": ">=4.3"
+    "node": ">=5.11"
   },
   "scripts": {
     "postinstall": "typings install",
