@@ -1,10 +1,10 @@
-import {AlertsComponent} from './alerts.component';
-import {RouterConfig} from '@angular/router';
-import {AlertsListComponent} from './alert-list.component';
-import {AlertDetailsComponent} from './alert-details.component';
-import {AlertsAdminComponent} from './alert-admin.component';
-import {AuthGuard} from '../management/auth.guard';
-import {CanDeactivateGuard} from '../management/interfaces';
+import { AlertsComponent } from './alerts.component';
+import { RouterConfig } from '@angular/router';
+import { AlertsListComponent } from './alert-list.component';
+import { AlertDetailsComponent } from './alert-details.component';
+import { AlertsAdminComponent } from './alert-admin.component';
+import { AuthGuard } from '../management/auth.guard';
+import { CanDeactivateGuard } from '../management/interfaces';
 
 export const AlertsRoutes: RouterConfig = [
   {

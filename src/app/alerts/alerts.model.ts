@@ -1,4 +1,4 @@
-import {FirebaseObjectObservable} from 'angularfire2/angularfire2';
+import { FirebaseObjectObservable } from 'angularfire2/angularfire2';
 export class Alert {
     public id: number;
     public name: string;

@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 // do whatever you want for logging here, add methods for log levels etc.
 @Injectable()

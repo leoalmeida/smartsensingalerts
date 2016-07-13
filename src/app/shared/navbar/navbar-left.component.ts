@@ -1,10 +1,10 @@
-import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'as-navbar-left',
-    templateUrl: 'app/navbar/navbar-left.html',
+    templateUrl: 'app/shared/navbar/navbar-left.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES]
 })
@@ -22,4 +22,3 @@ export class NavbarLeftComponent {
     }
 
 }
-

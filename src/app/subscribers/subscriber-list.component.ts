@@ -1,9 +1,9 @@
 /**
  * Created by LeonardoAlmeida on 22/06/16.
  */
-import {Component} from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
-import {ActiveFilterSubscriberPipe} from './subscriber-active-filter.pipe';
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ActiveFilterSubscriberPipe } from './subscriber-active-filter.pipe';
 // import {Subscriber} from '../management/interfaces';
 
 @Component({

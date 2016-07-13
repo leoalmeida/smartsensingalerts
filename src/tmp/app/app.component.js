@@ -11,8 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var shared_1 = require('./shared');
-var navbar_left_component_1 = require('./navbar/navbar-left.component');
-var navbar_top_component_1 = require('./navbar/navbar-top.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.appBrand = shared_1.CONSTANTS.MAIN.APP.BRAND;
@@ -25,7 +23,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'as-main-app',
             templateUrl: 'app/app.html',
-            directives: [navbar_left_component_1.NavbarLeftComponent, navbar_top_component_1.NavbarTopComponent, router_1.ROUTER_DIRECTIVES]
+            directives: [shared_1.NavbarLeftComponent, shared_1.NavbarTopComponent, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

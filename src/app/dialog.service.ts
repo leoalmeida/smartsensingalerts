@@ -12,7 +12,7 @@ export class DialogService {
      */
     confirm(message?: string) {
         return new Promise<boolean>(resolve => {
-            return resolve(window.confirm(message || 'Informação está correta?'));
+            return resolve(window.confirm(message || 'Is it OK?'));
         });
     };
 }

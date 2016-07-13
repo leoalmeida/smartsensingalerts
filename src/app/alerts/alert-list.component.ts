@@ -1,12 +1,12 @@
 
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {FirebaseListObservable} from 'angularfire2';
-import {CompletedAlertsFilterPipe} from './completed-alerts-filter.pipe';
-import {MapsComponent} from '../gmaps/gmaps.component';
-import {AlertMarker} from '../management/interfaces';
-import {AlertsService} from './alerts.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {AlertBoxComponent} from './alertbox.component';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FirebaseListObservable } from 'angularfire2';
+import { CompletedAlertsFilterPipe } from './completed-alerts-filter.pipe';
+import { MapsComponent } from '../utils/gmaps.component';
+import { AlertMarker } from '../management/interfaces';
+import { AlertsService } from './alerts.service';
+import { Router } from '@angular/router';
+import { AlertBoxComponent } from './alertbox.component';
 
 @Component({
     selector: 'as-alert-list',
@@ -24,7 +24,6 @@ export class AlertsListComponent implements OnInit, OnDestroy {
     private sub: any;
 
     constructor( private service: AlertsService,
-                 private route: ActivatedRoute,
                  private router: Router) {
         this.showCompleted = true;
         this.showPanel = true;
@@ -33,23 +32,21 @@ export class AlertsListComponent implements OnInit, OnDestroy {
     isSelected(alert: AlertMarker) { return alert.id === this.selectedKey; }
 
     ngOnInit() {
-        this.sub = this.route
-            .params
+        this.sub = this.router
+            .routerState
+            .queryParams
             .subscribe(params => {
-                this.selectedKey = +params['key'];
+                this.selectedKey = +params['id'];
                 this.alertItems = this.service.getAlerts();
             });
     }
 
     ngOnDestroy() {
-        if (this.sub) {
-            this.sub.unsubscribe();
-        }
+        this.sub.unsubscribe();
     }
 
-    onSelect(alert: AlertMarker) {
-        // Navigate with Absolute link
-        this.router.navigate(['/alerts', alert.id]);
+    onSelect(id: number) {
+        this.router.navigate(['/alertas', id]);
     }
 
     /*addAlert() {

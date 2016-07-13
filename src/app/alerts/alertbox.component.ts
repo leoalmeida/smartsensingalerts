@@ -1,11 +1,11 @@
-import {Component, Input, OnInit}            from '@angular/core';
-import {AlertsService}        from './alerts.service';
-import {AlertMarker} from '../management/interfaces';
-import {GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
-import {SysLogger} from '../utils/SysLogger';
-import {MAIN} from '../shared/constant/main';
-import {FORM_DIRECTIVES} from '@angular/forms';
-import {SafeFilter} from './safeimage-pipe.filter';
+import { Component, Input, OnInit }            from '@angular/core';
+import { AlertsService }        from './alerts.service';
+import { AlertMarker } from '../management/interfaces';
+import { GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
+import { SysLogger } from '../utils/SysLogger';
+import { MAIN } from '../shared/constant/main';
+import { FORM_DIRECTIVES } from '@angular/forms';
+import { SafeFilter } from './safeimage-pipe.filter';
 
 declare let google: any;
 

@@ -1,10 +1,10 @@
-import {SubscriberComponent} from './subscriber.component';
-import {RouterConfig} from '@angular/router';
-import {SubscriberProfileComponent} from './subscriber-profile.component';
-import {SubscriberAdminComponent} from './subscriber-admin.component';
-import {SubscriberListComponent} from './subscriber-list.component';
-import {AuthGuard} from '../management/auth.guard';
-import {CanDeactivateGuard} from '../management/interfaces';
+import { SubscriberComponent } from './subscriber.component';
+import { RouterConfig } from '@angular/router';
+import { SubscriberProfileComponent } from './subscriber-profile.component';
+import { SubscriberAdminComponent } from './subscriber-admin.component';
+import { SubscriberListComponent } from './subscriber-list.component';
+import { AuthGuard } from '../management/auth.guard';
+import { CanDeactivateGuard } from '../management/interfaces';
 
 export const SubscriberRoutes: RouterConfig = [
   {

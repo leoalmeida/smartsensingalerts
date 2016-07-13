@@ -33,7 +33,7 @@ var NavbarLeftComponent = (function () {
     NavbarLeftComponent = __decorate([
         core_1.Component({
             selector: 'as-navbar-left',
-            templateUrl: 'app/navbar/navbar-left.html',
+            templateUrl: 'app/shared/navbar/navbar-left.html',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             directives: [router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES]
         }), 

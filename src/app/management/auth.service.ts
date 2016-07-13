@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
-import {AuthProviders, AuthMethods, AngularFire} from 'angularfire2/angularfire2';
+import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2/angularfire2';
 
 @Injectable()
 export class AuthService {

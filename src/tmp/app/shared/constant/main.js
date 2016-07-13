@@ -20,7 +20,8 @@ exports.MAIN = {
     MAPS_APP_CONFIG: {
         apiKey: 'AIzaSyCCO7zMiZZTav3eDQlD6JnVoEcEVXkodns',
         region: 'BR',
-        language: 'pt-BR'
+        language: 'pt-BR',
+        protocol: 2
     },
     IMAGE_ASSETS_CONFIG: {
         folder: '../../assets/images/',

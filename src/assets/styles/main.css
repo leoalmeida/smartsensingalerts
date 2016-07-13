@@ -6565,6 +6565,9 @@ as-alertbox > * {
   -ms-flex: 1 100%;
   flex: 1 1 100%; }
 
+.sebm-google-map-container {
+  height: 400px; }
+
 .panel-title {
   font-weight: bold;
   color: cornflowerblue; }

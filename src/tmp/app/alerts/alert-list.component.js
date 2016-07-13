@@ -10,14 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var completed_alerts_filter_pipe_1 = require('./completed-alerts-filter.pipe');
-var gmaps_component_1 = require('../gmaps/gmaps.component');
+var gmaps_component_1 = require('../utils/gmaps.component');
 var alerts_service_1 = require('./alerts.service');
 var router_1 = require('@angular/router');
 var alertbox_component_1 = require('./alertbox.component');
 var AlertsListComponent = (function () {
-    function AlertsListComponent(service, route, router) {
+    function AlertsListComponent(service, router) {
         this.service = service;
-        this.route = route;
         this.router = router;
         this.showCompleted = true;
         this.showPanel = true;
@@ -25,21 +24,19 @@ var AlertsListComponent = (function () {
     AlertsListComponent.prototype.isSelected = function (alert) { return alert.id === this.selectedKey; };
     AlertsListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.sub = this.route
-            .params
+        this.sub = this.router
+            .routerState
+            .queryParams
             .subscribe(function (params) {
-            _this.selectedKey = +params['key'];
+            _this.selectedKey = +params['id'];
             _this.alertItems = _this.service.getAlerts();
         });
     };
     AlertsListComponent.prototype.ngOnDestroy = function () {
-        if (this.sub) {
-            this.sub.unsubscribe();
-        }
+        this.sub.unsubscribe();
     };
-    AlertsListComponent.prototype.onSelect = function (alert) {
-        // Navigate with Absolute link
-        this.router.navigate(['/alerts', alert.id]);
+    AlertsListComponent.prototype.onSelect = function (id) {
+        this.router.navigate(['/alertas', id]);
     };
     AlertsListComponent = __decorate([
         core_1.Component({
@@ -49,7 +46,7 @@ var AlertsListComponent = (function () {
             directives: [gmaps_component_1.MapsComponent, alertbox_component_1.AlertBoxComponent],
             pipes: [completed_alerts_filter_pipe_1.CompletedAlertsFilterPipe]
         }), 
-        __metadata('design:paramtypes', [alerts_service_1.AlertsService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [alerts_service_1.AlertsService, router_1.Router])
     ], AlertsListComponent);
     return AlertsListComponent;
 }());

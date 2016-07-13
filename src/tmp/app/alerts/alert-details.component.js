@@ -44,18 +44,9 @@ var AlertDetailsComponent = (function () {
     }
     AlertDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.sub = this.route
-            .params
-            .subscribe(function (params) {
-            var key = +params['key'];
-            var alert = _this.service.getAlert(key);
-            if (alert) {
-                _this.editName = alert.name;
-                _this.formAlert = alert;
-            }
-            else {
-                _this.gotoAlertlist();
-            }
+        this.sub = this.route.params.subscribe(function (params) {
+            var id = +params['id'];
+            _this.formAlert = _this.service.getAlert(id);
         });
     };
     AlertDetailsComponent.prototype.ngOnDestroy = function () {
@@ -87,7 +78,7 @@ var AlertDetailsComponent = (function () {
         // so that the Alert list component can select that alert.
         // Add a totally useless `foo` parameter for kicks.
         // Absolute link
-        this.router.navigate(['/alertas', { key: alertKey }]);
+        this.router.navigate(['/alertas', { queryParams: { id: alertKey } }]);
     };
     AlertDetailsComponent = __decorate([
         core_1.Component({

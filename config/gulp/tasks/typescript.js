@@ -58,10 +58,10 @@ gulp.task('tslint-e2e', function () {
 
 function lintTs(files) {
     return gulp.src(files)
-        .pipe(tslint())
-        .pipe(tslint.report('prose', {
-          summarizeFailureOutput: true
-        }));
+        .pipe(tslint({
+            formatter: 'verbose'
+        }))
+        .pipe(tslint.report());
 }
 
 function compileTs(files, watchMode) {
@@ -71,14 +71,13 @@ function compileTs(files, watchMode) {
     var tsProject = ts.createProject('tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
-            base: config.src,
-            outDir: config.tmp
-        })
-        .pipe(tslint())
-        .pipe(tslint.report('prose', {
-            summarizeFailureOutput: true,
-            emitError: !watchMode
+        base: config.src,
+        outDir: config.tmp
+    })
+        .pipe(tslint({
+            formatter: 'verbose'
         }))
+        .pipe(tslint.report())
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .on('error', function () {

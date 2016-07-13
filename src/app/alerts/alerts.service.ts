@@ -2,8 +2,8 @@
  * Created by LeonardoAlmeida on 26/06/16.
  */
 import { Injectable } from '@angular/core';
-import {AlertMarker} from '../management/interfaces';
-import {FirebaseListObservable, AngularFire} from 'angularfire2/angularfire2';
+import { AlertMarker } from '../management/interfaces';
+import { FirebaseListObservable, AngularFire } from 'angularfire2/angularfire2';
 
 
 @Injectable()
@@ -17,13 +17,14 @@ export class AlertsService {
 
     getAlerts() { return this.alertItems; }
 
-    getAlert(key: number): AlertMarker {
+    getAlert(key: number | string): AlertMarker {
         // return this.af.database. alertItems.filter(alert => alert.key === key)[0];
         this.alertItems._ref.orderByChild('key')
-                            .equalTo(key)
-                            .on('child_added', function(snapshot) {
-                                console.log(snapshot.key);
-                            });
+            .equalTo(key)
+            .on('child_added', function (snapshot) {
+                console.log(snapshot.key);
+            });
+
         return this.alertItems[0];
     }
 

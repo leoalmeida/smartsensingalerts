@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlertMarker } from '../management/interfaces';
 import { AlertsService } from './alerts.service';
-import {DialogService} from '../dialog.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Observable} from 'rxjs/Rx';
-import {SysLogger} from '../utils/SysLogger';
-import {DatePipe} from '@angular/common';
+import { DialogService } from '../dialog.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+import { SysLogger } from '../utils/SysLogger';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'as-alert-details',
@@ -17,6 +17,7 @@ import {DatePipe} from '@angular/common';
 export class AlertDetailsComponent implements OnInit, OnDestroy {
     private editName: string;
     private sub: any;
+
     private formAlert: AlertMarker = {
         id: 0,
         name: 'Enchente',
@@ -44,20 +45,11 @@ export class AlertDetailsComponent implements OnInit, OnDestroy {
         this.formAlert.startDate = datenow;
     }
 
-
     ngOnInit() {
-        this.sub = this.route
-            .params
-            .subscribe(params => {
-                let key = +params['key'];
-                let alert = this.service.getAlert(key);
-                if (alert) {
-                    this.editName = alert.name;
-                    this.formAlert = alert;
-                } else { // id not found
-                    this.gotoAlertlist();
-                }
-            });
+        this.sub = this.route.params.subscribe(params => {
+            let id = +params['id'];
+            this.formAlert = this.service.getAlert(id);
+        });
     }
 
     ngOnDestroy() {
@@ -93,7 +85,7 @@ export class AlertDetailsComponent implements OnInit, OnDestroy {
         // so that the Alert list component can select that alert.
         // Add a totally useless `foo` parameter for kicks.
         // Absolute link
-        this.router.navigate(['/alertas', {key: alertKey}]);
+        this.router.navigate(['/alertas', { queryParams: { id: alertKey } }]);
     }
 
 }

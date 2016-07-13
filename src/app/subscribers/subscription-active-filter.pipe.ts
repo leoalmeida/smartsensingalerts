@@ -1,6 +1,6 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {filter} from 'lodash';
-import {Subscription} from '../management/interfaces';
+import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'lodash';
+import { Subscription } from '../management/interfaces';
 
 @Pipe({
     name: 'asActiveSubscriptionsFilter'

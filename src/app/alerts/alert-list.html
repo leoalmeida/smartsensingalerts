@@ -14,7 +14,7 @@
 </div>
 <div class="caixas" >
     <ul class="list-group">
-        <li *ngFor="let item of (alertItems | asCompletedAlertsFilter:showCompleted) | async; let idx=index" >
+        <li *ngFor="let item of (alertItems | asCompletedAlertsFilter:showCompleted) | async; let idx=index" (click)="onSelect(item.id)">
             <as-alertbox [alertinfo]="item"></as-alertbox>
         </li>
     </ul>

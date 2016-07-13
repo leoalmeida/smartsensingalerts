@@ -1,4 +1,4 @@
-import {Subscription} from './subscription.model';
+import { Subscription } from './subscription.model';
 export class Subscriber {
     public id: number;
     public name: string;

@@ -30,7 +30,7 @@ var NavbarTopComponent = (function () {
     NavbarTopComponent = __decorate([
         core_1.Component({
             selector: 'as-navbar-top',
-            templateUrl: 'app/navbar/navbar-top.html',
+            templateUrl: 'app/shared/navbar/navbar-top.html',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             directives: [router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES]
         }), 

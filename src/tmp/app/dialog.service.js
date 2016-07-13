@@ -23,7 +23,7 @@ var DialogService = (function () {
      */
     DialogService.prototype.confirm = function (message) {
         return new Promise(function (resolve) {
-            return resolve(window.confirm(message || 'Informação está correta?'));
+            return resolve(window.confirm(message || 'Is it OK?'));
         });
     };
     ;

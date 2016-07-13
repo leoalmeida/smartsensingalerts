@@ -1,5 +1,5 @@
-import {ActiveFilterSubscriptionsPipe} from './subscription-active-filter.pipe';
-import {Subscription} from './subscription.model';
+import { ActiveFilterSubscriptionsPipe } from './subscription-active-filter.pipe';
+import { Subscription } from './subscription.model';
 
 describe('ActiveFilterSubscriptionsPipe', () => {
     let pipe: ActiveFilterSubscriptionsPipe;

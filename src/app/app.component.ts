@@ -1,8 +1,6 @@
-import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
-import {CONSTANTS} from './shared';
-import {NavbarLeftComponent} from './navbar/navbar-left.component';
-import {NavbarTopComponent} from './navbar/navbar-top.component';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { CONSTANTS, NavbarLeftComponent, NavbarTopComponent } from './shared';
 
 @Component({
     selector: 'as-main-app',
