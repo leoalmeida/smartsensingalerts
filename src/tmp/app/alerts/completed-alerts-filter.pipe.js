@@ -28,5 +28,20 @@ var CompletedAlertsFilterPipe = (function () {
     return CompletedAlertsFilterPipe;
 }());
 exports.CompletedAlertsFilterPipe = CompletedAlertsFilterPipe;
+var ReversePipe = (function () {
+    function ReversePipe() {
+    }
+    ReversePipe.prototype.transform = function (value) {
+        return value.slice().reverse();
+    };
+    ReversePipe = __decorate([
+        core_1.Pipe({
+            name: 'asReverseArray'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ReversePipe);
+    return ReversePipe;
+}());
+exports.ReversePipe = ReversePipe;
 
 //# sourceMappingURL=completed-alerts-filter.pipe.js.map

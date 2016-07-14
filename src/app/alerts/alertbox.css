@@ -27,7 +27,7 @@
 }
 
 /*------PARAGRAPH------*/
-#card .alert-selected p {
+#card .alert-selected as-alert-details {
     position: absolute;
     color: transparent;
     background: #3D6AA2;
@@ -40,7 +40,7 @@
     height: 100%;
 }
 
-#card .alert-selected:hover p{
+#card .alert-selected:hover as-alert-details{
     color: white;
     background: rgba(0,0,0,0.7);
     z-index: 1;

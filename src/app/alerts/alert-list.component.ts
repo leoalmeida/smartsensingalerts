@@ -1,7 +1,7 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
-import { CompletedAlertsFilterPipe } from './completed-alerts-filter.pipe';
+import { CompletedAlertsFilterPipe, ReversePipe } from './completed-alerts-filter.pipe';
 import { MapsComponent } from '../utils/gmaps.component';
 import { AlertMarker } from '../management/interfaces';
 import { AlertsService } from './alerts.service';
@@ -13,14 +13,14 @@ import { AlertBoxComponent } from './alertbox.component';
     templateUrl: 'app/alerts/alert-list.html',
     styleUrls: ['app/alerts/alerts.css'],
     directives: [MapsComponent, AlertBoxComponent],
-    pipes: [CompletedAlertsFilterPipe]
+    pipes: [CompletedAlertsFilterPipe, ReversePipe]
 })
 export class AlertsListComponent implements OnInit, OnDestroy {
     private alertItems: FirebaseListObservable<AlertMarker[]>;
     private showCompleted: Boolean;
     private showPanel: Boolean;
 
-    private selectedKey: number;
+    private selectedKey: string;
     private sub: any;
 
     constructor( private service: AlertsService,
@@ -29,14 +29,14 @@ export class AlertsListComponent implements OnInit, OnDestroy {
         this.showPanel = true;
     }
 
-    isSelected(alert: AlertMarker) { return alert.id === this.selectedKey; }
+    isSelected(key: string) { return key === this.selectedKey; }
 
     ngOnInit() {
         this.sub = this.router
             .routerState
             .queryParams
             .subscribe(params => {
-                this.selectedKey = +params['id'];
+                this.selectedKey = params['key'];
                 this.alertItems = this.service.getAlerts();
             });
     }
@@ -45,8 +45,8 @@ export class AlertsListComponent implements OnInit, OnDestroy {
         this.sub.unsubscribe();
     }
 
-    onSelect(id: number) {
-        this.router.navigate(['/alertas', id]);
+    onSelect(key: string) {
+        this.router.navigate(['/alertas', key]);
     }
 
     /*addAlert() {

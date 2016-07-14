@@ -13,23 +13,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var angularfire2_1 = require('angularfire2/angularfire2');
+var Subject_1 = require('rxjs/Subject');
+var alertPromise;
 var AlertsService = (function () {
-    // private dbname = 'alerts';
     function AlertsService(af) {
-        this.alertItems = af.database.list('/alerts');
+        var _this = this;
+        this.alertItems = af.database.list('alerts', {
+            query: {
+                orderByChild: 'severity'
+            }
+        });
+        this.alertSubject = new Subject_1.Subject();
+        this.alertFilter = af.database.list('alerts', {
+            query: {
+                orderByChild: 'id',
+                equalTo: this.alertSubject,
+                limitToFirst: 1
+            }
+        });
+        this.alertFilter.subscribe(function (queriedItems) {
+            console.log(queriedItems);
+            _this.alert = queriedItems[0];
+        });
     }
     AlertsService.prototype.getAlerts = function () { return this.alertItems; };
     AlertsService.prototype.getAlert = function (key) {
-        // return this.af.database. alertItems.filter(alert => alert.key === key)[0];
-        this.alertItems._ref.orderByChild('key')
-            .equalTo(key)
-            .on('child_added', function (snapshot) {
-            console.log(snapshot.key);
-        });
-        return this.alertItems[0];
+        this.alertSubject.next(key);
+        alertPromise = Promise.resolve(this.alertItems);
+        return alertPromise;
     };
     AlertsService.prototype.addAlert = function (newObject) {
-        var newkey = -1;
+        var newkey = '';
         if (newObject) {
             newkey = this.alertItems.push(newObject).key();
         }

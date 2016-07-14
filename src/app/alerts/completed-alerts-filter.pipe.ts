@@ -14,3 +14,12 @@ export class CompletedAlertsFilterPipe implements PipeTransform {
         return filter(alerts, {active});
     }
 }
+
+@Pipe({
+    name: 'asReverseArray'
+})
+export class ReversePipe implements PipeTransform {
+    transform(value: AlertMarker[]): AlertMarker[] {
+        return value.slice().reverse();
+    }
+}

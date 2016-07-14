@@ -21,22 +21,22 @@ var AlertsListComponent = (function () {
         this.showCompleted = true;
         this.showPanel = true;
     }
-    AlertsListComponent.prototype.isSelected = function (alert) { return alert.id === this.selectedKey; };
+    AlertsListComponent.prototype.isSelected = function (key) { return key === this.selectedKey; };
     AlertsListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.router
             .routerState
             .queryParams
             .subscribe(function (params) {
-            _this.selectedKey = +params['id'];
+            _this.selectedKey = params['key'];
             _this.alertItems = _this.service.getAlerts();
         });
     };
     AlertsListComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    AlertsListComponent.prototype.onSelect = function (id) {
-        this.router.navigate(['/alertas', id]);
+    AlertsListComponent.prototype.onSelect = function (key) {
+        this.router.navigate(['/alertas', key]);
     };
     AlertsListComponent = __decorate([
         core_1.Component({
@@ -44,7 +44,7 @@ var AlertsListComponent = (function () {
             templateUrl: 'app/alerts/alert-list.html',
             styleUrls: ['app/alerts/alerts.css'],
             directives: [gmaps_component_1.MapsComponent, alertbox_component_1.AlertBoxComponent],
-            pipes: [completed_alerts_filter_pipe_1.CompletedAlertsFilterPipe]
+            pipes: [completed_alerts_filter_pipe_1.CompletedAlertsFilterPipe, completed_alerts_filter_pipe_1.ReversePipe]
         }), 
         __metadata('design:paramtypes', [alerts_service_1.AlertsService, router_1.Router])
     ], AlertsListComponent);

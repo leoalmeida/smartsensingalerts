@@ -6,6 +6,7 @@ import { SysLogger } from '../utils/SysLogger';
 import { MAIN } from '../shared/constant/main';
 import { FORM_DIRECTIVES } from '@angular/forms';
 import { SafeFilter } from './safeimage-pipe.filter';
+import { AlertDetailsComponent } from './alert-details.component';
 
 declare let google: any;
 
@@ -13,12 +14,13 @@ declare let google: any;
     selector: 'as-alertbox',
     templateUrl: 'app/alerts/alertbox.html',
     styleUrls: ['app/alerts/alertbox.css'],
-    directives: [GOOGLE_MAPS_DIRECTIVES, FORM_DIRECTIVES],
+    directives: [GOOGLE_MAPS_DIRECTIVES, FORM_DIRECTIVES, AlertDetailsComponent],
     providers:  [AlertsService, SysLogger],
     pipes: [SafeFilter]
 })
 export class AlertBoxComponent implements OnInit {
     @Input() alertinfo:  AlertMarker;
+    showMoreInfo: boolean;
     alertImageIcon: string;
     localizationIcon: string;
     datetimeIcon: string;
@@ -27,17 +29,21 @@ export class AlertBoxComponent implements OnInit {
     backgroundImage: string;
 
     ngOnInit() {
-        this.alertImageIcon = MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.alertImage;
+        this.alertImageIcon = MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.icon;
         this.localizationIcon = MAIN.IMAGE_ASSETS_CONFIG.localizationIcon;
         this.datetimeIcon = MAIN.IMAGE_ASSETS_CONFIG.datetimeIcon;
         this.severityIcon =  MAIN.IMAGE_ASSETS_CONFIG.folder +
             MAIN.IMAGE_ASSETS_CONFIG.severityPattern +
-            this.alertinfo.severity +
+            this.alertinfo.severity.indexOf(true) +
             MAIN.IMAGE_ASSETS_CONFIG.defaultIconType;
         this.elapsedIcon = MAIN.IMAGE_ASSETS_CONFIG.elapsedIcon;
-        this.backgroundImage = 'url(' + ( this.alertinfo.backImage === '' ?
+        this.backgroundImage = 'url(' + ( this.alertinfo.localization.image === '' ?
                                 MAIN.IMAGE_ASSETS_CONFIG.backImage :
-                                MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.backImage) + ')';
+                                MAIN.IMAGE_ASSETS_CONFIG.folder + this.alertinfo.localization.image) + ')';
+    }
+
+    onSelect(key: string) {
+        this.showMoreInfo = !this.showMoreInfo;
     }
 
 

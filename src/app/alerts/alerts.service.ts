@@ -4,32 +4,51 @@
 import { Injectable } from '@angular/core';
 import { AlertMarker } from '../management/interfaces';
 import { FirebaseListObservable, AngularFire } from 'angularfire2/angularfire2';
+import { Subject } from 'rxjs/Subject';
 
+let alertPromise: any;
 
 @Injectable()
 export class AlertsService {
     private alertItems: FirebaseListObservable<AlertMarker[]>;
-    // private dbname = 'alerts';
+    private alertFilter: FirebaseListObservable<AlertMarker[]>;
+    private alert: AlertMarker;
+    private alertSubject: Subject<string>;
 
     constructor(af: AngularFire) {
-        this.alertItems = af.database.list('/alerts');
+        this.alertItems = af.database.list('alerts', {
+            query: {
+                orderByChild: 'severity'
+            }
+        });
+
+        this.alertSubject = new Subject<string>();
+
+        this.alertFilter = af.database.list('alerts', {
+            query: {
+                orderByChild: 'id',
+                equalTo: this.alertSubject,
+                limitToFirst: 1
+            }
+        });
+
+        this.alertFilter.subscribe(queriedItems => {
+            console.log(queriedItems);
+            this.alert = queriedItems[0];
+        });
     }
 
     getAlerts() { return this.alertItems; }
 
-    getAlert(key: number | string): AlertMarker {
-        // return this.af.database. alertItems.filter(alert => alert.key === key)[0];
-        this.alertItems._ref.orderByChild('key')
-            .equalTo(key)
-            .on('child_added', function (snapshot) {
-                console.log(snapshot.key);
-            });
+    getAlert(key: string) {
+        this.alertSubject.next(key);
+        alertPromise = Promise.resolve(this.alertItems);
 
-        return this.alertItems[0];
+        return alertPromise;
     }
 
-    addAlert(newObject: AlertMarker): number {
-        let newkey = -1;
+    addAlert(newObject: AlertMarker): string {
+        let newkey = '';
         if (newObject) {
             newkey = this.alertItems.push(newObject).key();
         }
@@ -44,4 +63,5 @@ export class AlertsService {
         this.alertItems.remove(fbkey);
         // this.alertItems = this.alertItems.filter((alert, index) => index !== alertIndex);
     }
+
 }

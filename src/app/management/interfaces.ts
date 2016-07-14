@@ -11,22 +11,52 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
     }
 }
 
+export interface Localization {
+    address: string;
+    image: string;
+    latitude: number;
+    longitude: number;
+}
+
+export interface Configuration {
+    controller: string;
+    defaultUnit: string;
+    pin: string;
+}
+
+export interface Measure {
+    average: number;
+    date: string;
+    readings: number;
+    unit: string;
+    value: number;
+}
+
+export interface Sensor {
+    collectedData: Measure[];
+    configuration: Configuration;
+    icon: string;
+    isActive: boolean;
+    label: string;
+    localization: Localization;
+    name: string;
+    type: string;
+}
+
 export interface AlertMarker {
-    alertImage?: string;
-    backImage?: string;
-    id: number;
-    severity: number;
-    strAddress?: string;
-    isActive?: boolean;
+    name: string;
+    icon: string;
+    type: string;
+    severity: boolean[];
+    label: string;
+    sensors: Sensor[];
     startDate: string;
     releaseDate?: string;
-    lat: number;
-    lng: number;
-    label: string;
-    name?: string;
-    draggable?: boolean;
-    icon?: string;
-    routeLink?: string;
+    lastUpdates?: Measure[];
+    localization?: Localization;
+    isActive?: boolean;
+    isDraggable?: boolean;
+    moreInfo?: any;
 }
 
 export interface Subscription {
@@ -48,12 +78,4 @@ export interface Subscriber {
 export interface MarkerLabel {
     color: string;
     text: string;
-}
-
-export interface Alert {
-    key: number;
-    name?: string;
-    alertImage?: string;
-    alertType: string;
-    isDone?: boolean;
 }
