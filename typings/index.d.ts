@@ -1,6 +1,7 @@
 /// <reference path="globals/angular-protractor/index.d.ts" />
 /// <reference path="globals/core-js/index.d.ts" />
 /// <reference path="globals/firebase/index.d.ts" />
+/// <reference path="globals/google.maps/index.d.ts" />
 /// <reference path="globals/jasmine/index.d.ts" />
 /// <reference path="globals/selenium-webdriver/index.d.ts" />
 /// <reference path="modules/lodash/index.d.ts" />
