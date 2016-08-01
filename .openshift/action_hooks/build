@@ -1,2 +1,3 @@
 #!/bin/bash
-echo Hello build
+cd $OPENSHIFT_REPO_DIR
+gulp start --env prodution
