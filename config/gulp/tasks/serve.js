@@ -1,6 +1,6 @@
 var envConfig = require('../utils/env');
 
-if (envConfig.ENV === envConfig.ENVS.DEV)
+if (envConfig.ENV === envConfig.ENVS.PROD)
 {
     var gulp = require('gulp');
     var config = require('../config')();
