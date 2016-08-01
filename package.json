@@ -14,7 +14,7 @@
     "npm": ">=3.10.3"
   },
   "scripts": {
-    "start": "gulp build"
+    "start": "gulp"
   },
   "keywords": [
     "angular2",
@@ -45,9 +45,7 @@
     "@angular/router": "3.0.0-beta.2",
     "@ngstarter/systemjs-extension": "1.0.0-rc.3",
     "bootstrap-sass": "^3.3.7",
-    "browser-sync": "^2.13.0",
     "codelyzer": "0.0.26",
-    "connect-history-api-fallback": "^1.2.0",
     "core-js": "^2.4.1",
     "del": "~2.2.1",
     "firebase": "^3.2.1",
@@ -87,5 +85,9 @@
     "zone.js": "^0.6.12",
     "angularfire2": "^2.0.0-beta.2-2c9ab31",
     "angular2-google-maps": "^0.12.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "connect-history-api-fallback": "^1.2.0"
   }
 }

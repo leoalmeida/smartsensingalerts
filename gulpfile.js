@@ -9,4 +9,5 @@ var gulp = require('gulp'),
 dashboard.show();
 
 /* Default task */
-gulp.task('default', ['serve-build']);
+// gulp.task('default', ['serve-dev']);
+gulp.task('heroku:production', ['build']);
