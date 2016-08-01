@@ -4,7 +4,7 @@
   "author": "Leonardo Almeida",
   "description": "Smart Sensing Project",
   "private": true,
-  "main": "src/tmp/app/main.js",
+  "main": "./build/index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/leoalmeida/smartsensingalerts.git"
@@ -14,9 +14,7 @@
     "npm": ">=3.10.3"
   },
   "scripts": {
-    "postinstall": "gulp default",
-    "start": "gulp build",
-    "build": "gulp build"
+    "start": "gulp build"
   },
   "keywords": [
     "angular2",
