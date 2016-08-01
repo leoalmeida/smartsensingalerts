@@ -9,12 +9,12 @@
     "url": "https://github.com/leoalmeida/smartsensingalerts.git"
   },
   "engines": {
-    "node": ">=6.3",
+    "node": ">=6.3.1",
     "npm": ">=3.10.3"
   },
   "scripts": {
     "postinstall": "typings install",
-    "start": "gulp serve-dev",
+    "start": "gulp serve-",
     "test": "gulp test",
     "e2e": "gulp e2e",
     "env": "gulp env",
