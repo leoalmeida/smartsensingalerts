@@ -11,8 +11,8 @@ dashboard.show();
 /* Default task */
 /* gulp.task('default', ['serve-dev']);*/
 
-function buildApp() {
-  return gulp.task('default', ['heroku:production']);
+function buildApp(var env) {
+  return gulp.task('default', ['heroku:'+ env]);
 }
 
 module.exports = buildApp;
