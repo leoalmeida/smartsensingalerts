@@ -83,8 +83,8 @@ module.exports = function () {
         systemJs: systemJs
     };
 
-    //if (envConfig.ENV === envConfig.ENVS.DEV)
-    //{
+    if (envConfig.ENV === envConfig.ENVS.DEV)
+    {
         var historyApiFallback = require('connect-history-api-fallback');
         var browserSync = {
             dev: {
@@ -113,7 +113,7 @@ module.exports = function () {
                     middleware: [historyApiFallback()]
                 }
             }
-        //};
+        };
 
         gulpConfig.browserSync = browserSync;
     }

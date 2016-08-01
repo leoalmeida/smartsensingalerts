@@ -1,7 +1,7 @@
 var envConfig = require('../utils/env');
 
-//if (envConfig.ENV === envConfig.ENVS.DEV)
-//{
+if (envConfig.ENV === envConfig.ENVS.DEV)
+{
     var gulp = require('gulp');
     var config = require('../config')();
     var bs = require("browser-sync");
@@ -24,4 +24,4 @@ var envConfig = require('../utils/env');
     {
         startBrowsersync(config.browserSync.prod);
     });
-//}
+}

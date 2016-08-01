@@ -13,15 +13,9 @@
     "npm": ">=3.10.3"
   },
   "scripts": {
-    "postinstall": "typings install",
-    "start": "gulp serve-build",
-    "test": "gulp test",
-    "e2e": "gulp e2e",
-    "env": "gulp env",
-    "build": "gulp build",
-    "serve-build": "gulp serve-build",
-    "clean": "gulp clean",
-    "coverage": "coveralls < ./report/remap/lcov.info"
+    "postinstall": "gulp default",
+    "start": "node app",
+    "build": "gulp build"
   },
   "keywords": [
     "angular2",
