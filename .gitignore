@@ -1,4 +1,5 @@
 .idea/
+!.openshift/
 /node_modules
 !/node_modules/angular2-google-maps/
 /bower_components
