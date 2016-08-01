@@ -14,7 +14,7 @@
   },
   "scripts": {
     "postinstall": "typings install",
-    "start": "gulp start",
+    "start": "gulp serve-build",
     "test": "gulp test",
     "e2e": "gulp e2e",
     "env": "gulp env",
