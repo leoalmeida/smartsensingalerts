@@ -25,3 +25,9 @@ if (envConfig.ENV === envConfig.ENVS.DEV)
         startBrowsersync(config.browserSync.prod);
     });
 }
+
+if (envConfig.ENV === envConfig.ENVS.PROD)
+{
+    var gulp = require('gulp');
+    gulp.task('heroku:production', ['build']);
+}

@@ -14,7 +14,7 @@
     "npm": ">=3.10.3"
   },
   "scripts": {
-    "start": "gulp --env production"
+    "start": "gulp"
   },
   "keywords": [
     "angular2",
