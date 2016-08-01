@@ -1,6 +1,7 @@
 .idea/
+/
+!/build
 /node_modules
-!/node_modules/angular2-google-maps/
 /bower_components
 /report
 /typings
