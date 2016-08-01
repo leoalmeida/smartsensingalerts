@@ -6,4 +6,3 @@ export * from './alerts.component';
 export * from './alerts.routes';
 export * from './alerts.service';
 export * from './completed-alerts-filter.pipe';
-export * from './safeimage-pipe.filter';

@@ -6,11 +6,13 @@ import { AlertsRoutes }  from './alerts/index';
 import { SubscriberRoutes }  from './subscribers/index';
 import { AUTH_PROVIDERS, LoginRoutes }  from './management/index';
 import { CanDeactivateGuard }  from './management/interfaces';
+import { MessengerRoutes } from './messenger/index';
 
 export const routes: RouterConfig = [
     ...HomeRoutes,
     ...TodolistRoutes,
     ...AlertsRoutes,
+    ...MessengerRoutes,
     ...SubscriberRoutes,
     ...LoginRoutes
 ];

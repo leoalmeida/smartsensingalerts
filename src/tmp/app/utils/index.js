@@ -4,5 +4,6 @@ function __export(m) {
 }
 __export(require('./SysLogger'));
 __export(require('./gmaps.component'));
+__export(require('./safeimage-pipe.filter'));
 
 //# sourceMappingURL=index.js.map

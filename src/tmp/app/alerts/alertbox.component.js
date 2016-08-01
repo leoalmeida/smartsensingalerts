@@ -14,7 +14,7 @@ var core_2 = require('angular2-google-maps/core');
 var SysLogger_1 = require('../utils/SysLogger');
 var main_1 = require('../shared/constant/main');
 var forms_1 = require('@angular/forms');
-var safeimage_pipe_filter_1 = require('./safeimage-pipe.filter');
+var safeimage_pipe_filter_1 = require('../utils/safeimage-pipe.filter');
 var alert_details_component_1 = require('./alert-details.component');
 var AlertBoxComponent = (function () {
     function AlertBoxComponent() {

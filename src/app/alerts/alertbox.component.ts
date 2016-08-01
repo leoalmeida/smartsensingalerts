@@ -5,7 +5,7 @@ import { GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
 import { SysLogger } from '../utils/SysLogger';
 import { MAIN } from '../shared/constant/main';
 import { FORM_DIRECTIVES } from '@angular/forms';
-import { SafeFilter } from './safeimage-pipe.filter';
+import { SafeFilter } from '../utils/safeimage-pipe.filter';
 import { AlertDetailsComponent } from './alert-details.component';
 
 declare let google: any;

@@ -63,19 +63,54 @@ export interface Subscription {
     id: number;
     rules: string;
     isActive?: boolean;
-}
-
-export interface Subscriber {
-    id: number;
-    name: string;
-    avatar?: string;
-    isActive?: boolean;
-    profile?: string;
-    geo?: string;
-    subscriptions?: Subscription[];
+    subscriptionDate: string;
 }
 
 export interface MarkerLabel {
     color: string;
     text: string;
 }
+
+export interface User {
+    id: number;
+    name: string;
+    status: number;
+    email: string;
+    mood: string;
+    bio: string;
+    localization: {
+        lastPosition: Localization;
+        mainPosition: Localization;
+    };
+    avatar?: number;
+    theme?: number;
+    subscriptions?: Subscription[];
+}
+
+export interface GeneratedToken {
+    email: string;
+    generatedToken: string;
+    status: number;
+};
+
+export interface Message {
+    msg: string;
+    receivedDate: string;
+    sendDate: string;
+    sender: number;
+    status: number;
+};
+
+export interface Group {
+    id: number;
+    name: string;
+    subject: string;
+    description: string;
+    icon: number;
+    background: number;
+    securityLevel:   number;
+    status: number;
+    members: User[];
+    messages: Message[];
+    generatedTokens: GeneratedToken[];
+};

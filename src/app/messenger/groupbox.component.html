@@ -1,0 +1,48 @@
+<div id="card" (click)="onSelect(group.$key)">
+    <div class="group-selected">
+        <article>
+            <div class="info">
+                <div class="group"><span>Grupo {{group.$key}}:</span> {{group.name}} </div>
+                <div class="group-type">{{group.name}}</div>
+                <div class="main-info">
+                    {{group.messages.length}}
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="icon">
+                <img [src]="getImageSrc(group.icon)">
+            </div>
+        </article>
+        <article>
+            <div class="secondary-info">
+                <span *ngFor="let member of (group.members); let idx=index" (click)="onSelect(member.$key)" class="element-item" >
+                    <a class="btn icon-info">
+                        <div class="icon">
+                            <img [src]="getImageSrc(member.avatar)">
+                        </div>
+                        <span class="label label-primary">{{member.$key}}</span>
+                    </a>
+                    <span class="label label-primary">{{member.name}}</span>
+                </span>
+            </div>
+        </article>
+        <as-group-details id="card-info" [formGroup]="group"></as-group-details>
+        <!--<figure *ngIf="local1" style="background-image: url(../../assets/images/background_downtown.jpg)"></figure>-->
+        <figure [style.background-image]="backgroundImage | asSafe" class="card-image"></figure>
+
+    </div>
+
+    <div class="address-box">
+        <div class="row row-no-gutter">
+            <div class="col-md-12">
+                <div class="address-info">
+                    <h1>Descrição</h1>
+                    <div>
+                        <i class="fa fa-compass" aria-hidden="true"></i>
+                        <h2 class="address">{{group.description}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

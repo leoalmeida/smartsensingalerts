@@ -10,6 +10,5 @@ __export(require('./alerts.component'));
 __export(require('./alerts.routes'));
 __export(require('./alerts.service'));
 __export(require('./completed-alerts-filter.pipe'));
-__export(require('./safeimage-pipe.filter'));
 
 //# sourceMappingURL=index.js.map

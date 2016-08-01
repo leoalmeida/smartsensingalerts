@@ -24,6 +24,9 @@ export const MAIN = {
     },
     IMAGE_ASSETS_CONFIG: {
         folder: '../../assets/images/',
+        backgroundImgPattern: 'profile_header',
+        avatarPattern: 'profile_demo_',
+        defaultImageType: '.png',
         defaultIconType: '.svg',
         localizationIcon: '../../assets/images/localization.svg',
         elapsedIcon: '../../assets/images/elapsed-time.svg',

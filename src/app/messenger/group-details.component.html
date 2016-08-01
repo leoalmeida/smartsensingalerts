@@ -1,0 +1,15 @@
+    <h4>Grupo : {{ formGroup.name }}
+    ({{ formGroup.members.length }} membros)</h4>
+    <article>
+        <div class="secondary-info">
+        <ul>
+            <li *ngFor="let message of (formGroup.messages); let idx=index" class="element-item" >
+                <div class="row">
+                    <img class="msg-icon" [src]="getImageSrc(message.avatar)">
+                    <span class="text-capitalize">{{message.msg}}</span>
+                    <span class="text-capitalize">{{message.sendDate}}</span>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </article>

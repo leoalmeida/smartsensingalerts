@@ -13,11 +13,11 @@ var lodash_1 = require('lodash');
 var ActiveFilterSubscriberPipe = (function () {
     function ActiveFilterSubscriberPipe() {
     }
-    ActiveFilterSubscriberPipe.prototype.transform = function (subscribers, active) {
+    ActiveFilterSubscriberPipe.prototype.transform = function (users, active) {
         if (active) {
-            return subscribers;
+            return users;
         }
-        return lodash_1.filter(subscribers, { active: active });
+        return lodash_1.filter(users, { active: active });
     };
     ActiveFilterSubscriberPipe = __decorate([
         core_1.Pipe({

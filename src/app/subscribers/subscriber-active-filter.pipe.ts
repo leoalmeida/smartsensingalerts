@@ -1,16 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { filter } from 'lodash';
-import { Subscriber } from '../management/interfaces';
+import { User } from '../management/interfaces';
 
 @Pipe({
     name: 'asActiveSubscriberFilter'
 })
 export class ActiveFilterSubscriberPipe implements PipeTransform {
-    transform(subscribers: Subscriber[], active: Boolean): Subscriber[] {
+    transform(users: User[], active: Boolean): User[] {
         if (active) {
-            return subscribers;
+            return users;
         }
 
-        return filter(subscribers, {active});
+        return filter(users, {active});
     }
 }
