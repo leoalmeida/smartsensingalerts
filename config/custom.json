@@ -1,0 +1,8 @@
+{
+  "DEFAULT_DATA_DIR": "${appRoot}/data",
+  "dataDir": "={OPENSHIFT_DATA_DIR|DEFAULT_DATA_DIR}",
+  "server": {
+    "ip": "={OPENSHIFT_NODEJS_IP|OPENSHIFT_INTERNAL_IP}",
+    "port": "={OPENSHIFT_NODEJS_PORT|OPENSHIFT_INTERNAL_PORT}"
+  }
+}
